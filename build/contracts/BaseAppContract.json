@@ -1,0 +1,279 @@
+{
+  "contractName": "BaseAppContract",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/app/base/BaseAppContract.sol\":\"BaseAppContract\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/app/base/BaseAppContract.sol\":{\"keccak256\":\"0xedf320cdd0580e92ad8449ba238fcf34bac91afa041e1d7cbfba6d48dbaab422\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a89d30666ac6ffe099f310d2187875788fe5831dedef80713b83fe277621e473\",\"dweb:/ipfs/Qmdah1Hm1ffVjjafE9zLDNvonHR9u7HfTAxBjNG6x14xMu\"]},\"project:/contracts/data/base/BaseDataContract.sol\":{\"keccak256\":\"0x5b1722dbe70c87957e3938477ff976ca9562ff4263be62e91ef978da51b5da78\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f5eb2452f4a9d433bcb8dd9fa3a3ed3aaceed103feedf7522eecdbf187ad5e9f\",\"dweb:/ipfs/QmZMnTwHhTm5f2JR29BPpemqV4XDq7L4RA7yYNm8hqPDGn\"]},\"project:/contracts/data/base/BaseDataInsuranceController.sol\":{\"keccak256\":\"0x372a43608a9f76ebc29eded1e92d6f8cc3b47ca0c7be3ad2bfaf82ad85370ce4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a2405527f67a1d089998032371e769357a76d25e5f1d2b31ad05971edc1e926d\",\"dweb:/ipfs/QmYMJKF9xjk2NWk4EaNt6D2Dqz3Z91oM6m7CJVHQKuLqNh\"]},\"project:/contracts/data/base/BaseDataInsurerController.sol\":{\"keccak256\":\"0xfc7283989185c16c99ecb17f23bf5687d5808d408c682abcabd508e91fb59fed\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b1b17fd611c59125bd1390f6e24ff49e080fc2893f80eb4b68f7f6b807ded1f8\",\"dweb:/ipfs/QmW5tq66BqMWzrwNqD15zu5VGHNvgR1Tub7UtCtaDtxsWx\"]},\"project:/contracts/shared/BaseOperationalContract.sol\":{\"keccak256\":\"0x3518e25104d3dce8f60d8d2558aa412222d5667b5732b0ce607401cae6eaa53a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1b17eb8025748c4e8689508974695ff3771937130a4de3bedeb2f3a1235be6b8\",\"dweb:/ipfs/QmXff87UaNbtCRoowc4gfZKiJu2Mef6d7VAMK5fZLxUzAw\"]},\"project:/contracts/shared/BaseSuretyData.sol\":{\"keccak256\":\"0xd9aced2d1179a2ec4382de9d65ef9f416f18474cc4be913e25852371dcf33e37\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e54948b75da3ca72350bc35db305bb6bcee4e8a91e63d84823486128e70e4480\",\"dweb:/ipfs/QmSapdMpk2MmAysUPaHAT1q6MMUd4bhAT69eRJzfVZKH1d\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\nimport \"../../shared/BaseSuretyData.sol\";\n\nabstract contract BaseAppContract {\n\n    BaseSuretyData internal suretyDataContract;\n\n    /**\n    * Modifiers and private methods\n    */\n\n    modifier requireIsOperational() {\n        require(suretyDataContract.isContractOperational(), \"Contract is currently not operational\");\n        _;\n    }\n}\n",
+  "sourcePath": "/Volumes/Others/blockchain/udacity/flight-udacity-dapp/contracts/app/base/BaseAppContract.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/app/base/BaseAppContract.sol",
+    "exportedSymbols": {
+      "BaseAppContract": [
+        1245
+      ],
+      "BaseDataContract": [
+        2249
+      ],
+      "BaseDataInsuranceController": [
+        2288
+      ],
+      "BaseDataInsurerController": [
+        2325
+      ],
+      "BaseOperationalContract": [
+        2339
+      ],
+      "BaseSuretyData": [
+        2354
+      ]
+    },
+    "id": 1246,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1228,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".5"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:7"
+      },
+      {
+        "absolutePath": "project:/contracts/shared/BaseSuretyData.sol",
+        "file": "../../shared/BaseSuretyData.sol",
+        "id": 1229,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1246,
+        "sourceUnit": 2355,
+        "src": "57:41:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [],
+        "canonicalName": "BaseAppContract",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 1245,
+        "linearizedBaseContracts": [
+          1245
+        ],
+        "name": "BaseAppContract",
+        "nameLocation": "118:15:7",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 1232,
+            "mutability": "mutable",
+            "name": "suretyDataContract",
+            "nameLocation": "165:18:7",
+            "nodeType": "VariableDeclaration",
+            "scope": 1245,
+            "src": "141:42:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_BaseSuretyData_$2354",
+              "typeString": "contract BaseSuretyData"
+            },
+            "typeName": {
+              "id": 1231,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 1230,
+                "name": "BaseSuretyData",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 2354,
+                "src": "141:14:7"
+              },
+              "referencedDeclaration": 2354,
+              "src": "141:14:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BaseSuretyData_$2354",
+                "typeString": "contract BaseSuretyData"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1243,
+              "nodeType": "Block",
+              "src": "274:120:7",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "expression": {
+                            "id": 1236,
+                            "name": "suretyDataContract",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1232,
+                            "src": "292:18:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_BaseSuretyData_$2354",
+                              "typeString": "contract BaseSuretyData"
+                            }
+                          },
+                          "id": 1237,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "isContractOperational",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 2332,
+                          "src": "292:40:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$__$returns$_t_bool_$",
+                            "typeString": "function () view external returns (bool)"
+                          }
+                        },
+                        "id": 1238,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "292:42:7",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "436f6e74726163742069732063757272656e746c79206e6f74206f7065726174696f6e616c",
+                        "id": 1239,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "336:39:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_a944ac63656791076c14949470b85bdffa60627db8794c94b1d70a12e2e21886",
+                          "typeString": "literal_string \"Contract is currently not operational\""
+                        },
+                        "value": "Contract is currently not operational"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_a944ac63656791076c14949470b85bdffa60627db8794c94b1d70a12e2e21886",
+                          "typeString": "literal_string \"Contract is currently not operational\""
+                        }
+                      ],
+                      "id": 1235,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "284:7:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1240,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "284:92:7",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1241,
+                  "nodeType": "ExpressionStatement",
+                  "src": "284:92:7"
+                },
+                {
+                  "id": 1242,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "386:1:7"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 1233,
+              "nodeType": "StructuredDocumentation",
+              "src": "190:46:7",
+              "text": " Modifiers and private methods"
+            },
+            "id": 1244,
+            "name": "requireIsOperational",
+            "nameLocation": "251:20:7",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 1234,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "271:2:7"
+            },
+            "src": "242:152:7",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 1246,
+        "src": "100:296:7",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:365:7"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-06-11T12:15:55.573Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

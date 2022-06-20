@@ -1,0 +1,622 @@
+{
+  "contractName": "AppContract",
+  "abi": [
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    },
+    {
+      "inputs": [],
+      "name": "isContractOperational",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"isContractOperational\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"API\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/app/AppContract.sol\":\"AppContract\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/app/AppContract.sol\":{\"keccak256\":\"0x6773d943bbe837451bcbed5996ccff322b0217881a3a8d04602110d553b606bf\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c6d9d51dc755c0bf36dae59d211a73739a882475241ebde7c3e0cfaf530fe83f\",\"dweb:/ipfs/QmcrgmHHbeRmrgjezThBuGpwroWaf84o5anSetrXF6khn3\"]},\"project:/contracts/app/base/BaseAppContract.sol\":{\"keccak256\":\"0xedf320cdd0580e92ad8449ba238fcf34bac91afa041e1d7cbfba6d48dbaab422\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a89d30666ac6ffe099f310d2187875788fe5831dedef80713b83fe277621e473\",\"dweb:/ipfs/Qmdah1Hm1ffVjjafE9zLDNvonHR9u7HfTAxBjNG6x14xMu\"]},\"project:/contracts/data/base/BaseDataContract.sol\":{\"keccak256\":\"0x5b1722dbe70c87957e3938477ff976ca9562ff4263be62e91ef978da51b5da78\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f5eb2452f4a9d433bcb8dd9fa3a3ed3aaceed103feedf7522eecdbf187ad5e9f\",\"dweb:/ipfs/QmZMnTwHhTm5f2JR29BPpemqV4XDq7L4RA7yYNm8hqPDGn\"]},\"project:/contracts/data/base/BaseDataInsuranceController.sol\":{\"keccak256\":\"0x372a43608a9f76ebc29eded1e92d6f8cc3b47ca0c7be3ad2bfaf82ad85370ce4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a2405527f67a1d089998032371e769357a76d25e5f1d2b31ad05971edc1e926d\",\"dweb:/ipfs/QmYMJKF9xjk2NWk4EaNt6D2Dqz3Z91oM6m7CJVHQKuLqNh\"]},\"project:/contracts/data/base/BaseDataInsurerController.sol\":{\"keccak256\":\"0xfc7283989185c16c99ecb17f23bf5687d5808d408c682abcabd508e91fb59fed\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b1b17fd611c59125bd1390f6e24ff49e080fc2893f80eb4b68f7f6b807ded1f8\",\"dweb:/ipfs/QmW5tq66BqMWzrwNqD15zu5VGHNvgR1Tub7UtCtaDtxsWx\"]},\"project:/contracts/shared/BaseOperationalContract.sol\":{\"keccak256\":\"0x3518e25104d3dce8f60d8d2558aa412222d5667b5732b0ce607401cae6eaa53a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1b17eb8025748c4e8689508974695ff3771937130a4de3bedeb2f3a1235be6b8\",\"dweb:/ipfs/QmXff87UaNbtCRoowc4gfZKiJu2Mef6d7VAMK5fZLxUzAw\"]},\"project:/contracts/shared/BaseSuretyData.sol\":{\"keccak256\":\"0xd9aced2d1179a2ec4382de9d65ef9f416f18474cc4be913e25852371dcf33e37\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e54948b75da3ca72350bc35db305bb6bcee4e8a91e63d84823486128e70e4480\",\"dweb:/ipfs/QmSapdMpk2MmAysUPaHAT1q6MMUd4bhAT69eRJzfVZKH1d\"]},\"project:/contracts/shared/PayableContract.sol\":{\"keccak256\":\"0xef48e65cf9cec25b2bacc2075549c6075bd299c53b43e13a0b8c7b753f4f3cdf\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2124c3fb367ee14110b7b2f05207b6e1d1fd6b51d0001687e545413a9584527d\",\"dweb:/ipfs/QmWWKnNoW7cvbmm8x6DUuPCXRVq43TGzZMy3Gt63dtZKu1\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\nimport \"./base/BaseAppContract.sol\";\nimport \"../shared/BaseSuretyData.sol\";\nimport \"../shared/PayableContract.sol\";\n\nabstract contract AppContract is BaseAppContract, PayableContract {\n\n    /**\n    * API\n    */\n\n    constructor(address suretyDataContractAddress) {\n        suretyDataContract = BaseSuretyData(suretyDataContractAddress);\n    }\n\n    function isContractOperational() external view returns (bool){\n        return suretyDataContract.isContractOperational();\n    }\n\n    receive() external payable {\n        payTo(address(suretyDataContract), msg.value, \"Cannot fund suretyDataContract\");\n    }\n\n}\n\n",
+  "sourcePath": "/Volumes/Others/blockchain/udacity/flight-udacity-dapp/contracts/app/AppContract.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/app/AppContract.sol",
+    "exportedSymbols": {
+      "AppContract": [
+        160
+      ],
+      "BaseAppContract": [
+        1245
+      ],
+      "BaseDataContract": [
+        2249
+      ],
+      "BaseDataInsuranceController": [
+        2288
+      ],
+      "BaseDataInsurerController": [
+        2325
+      ],
+      "BaseOperationalContract": [
+        2339
+      ],
+      "BaseSuretyData": [
+        2354
+      ],
+      "PayableContract": [
+        2424
+      ]
+    },
+    "id": 161,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 115,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".5"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:3"
+      },
+      {
+        "absolutePath": "project:/contracts/app/base/BaseAppContract.sol",
+        "file": "./base/BaseAppContract.sol",
+        "id": 116,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 161,
+        "sourceUnit": 1246,
+        "src": "57:36:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/shared/BaseSuretyData.sol",
+        "file": "../shared/BaseSuretyData.sol",
+        "id": 117,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 161,
+        "sourceUnit": 2355,
+        "src": "94:38:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/shared/PayableContract.sol",
+        "file": "../shared/PayableContract.sol",
+        "id": 118,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 161,
+        "sourceUnit": 2425,
+        "src": "133:39:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 119,
+              "name": "BaseAppContract",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 1245,
+              "src": "207:15:3"
+            },
+            "id": 120,
+            "nodeType": "InheritanceSpecifier",
+            "src": "207:15:3"
+          },
+          {
+            "baseName": {
+              "id": 121,
+              "name": "PayableContract",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 2424,
+              "src": "224:15:3"
+            },
+            "id": 122,
+            "nodeType": "InheritanceSpecifier",
+            "src": "224:15:3"
+          }
+        ],
+        "canonicalName": "AppContract",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 160,
+        "linearizedBaseContracts": [
+          160,
+          2424,
+          1245
+        ],
+        "name": "AppContract",
+        "nameLocation": "192:11:3",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 134,
+              "nodeType": "Block",
+              "src": "320:79:3",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 132,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 128,
+                      "name": "suretyDataContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1232,
+                      "src": "330:18:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_BaseSuretyData_$2354",
+                        "typeString": "contract BaseSuretyData"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 130,
+                          "name": "suretyDataContractAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 125,
+                          "src": "366:25:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 129,
+                        "name": "BaseSuretyData",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2354,
+                        "src": "351:14:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_BaseSuretyData_$2354_$",
+                          "typeString": "type(contract BaseSuretyData)"
+                        }
+                      },
+                      "id": 131,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "351:41:3",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_BaseSuretyData_$2354",
+                        "typeString": "contract BaseSuretyData"
+                      }
+                    },
+                    "src": "330:62:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_BaseSuretyData_$2354",
+                      "typeString": "contract BaseSuretyData"
+                    }
+                  },
+                  "id": 133,
+                  "nodeType": "ExpressionStatement",
+                  "src": "330:62:3"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 123,
+              "nodeType": "StructuredDocumentation",
+              "src": "247:20:3",
+              "text": " API"
+            },
+            "id": 135,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 126,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 125,
+                  "mutability": "mutable",
+                  "name": "suretyDataContractAddress",
+                  "nameLocation": "293:25:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 135,
+                  "src": "285:33:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 124,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "285:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "284:35:3"
+            },
+            "returnParameters": {
+              "id": 127,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "320:0:3"
+            },
+            "scope": 160,
+            "src": "273:126:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 144,
+              "nodeType": "Block",
+              "src": "466:66:3",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "id": 140,
+                        "name": "suretyDataContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1232,
+                        "src": "483:18:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_BaseSuretyData_$2354",
+                          "typeString": "contract BaseSuretyData"
+                        }
+                      },
+                      "id": 141,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "isContractOperational",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2332,
+                      "src": "483:40:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$__$returns$_t_bool_$",
+                        "typeString": "function () view external returns (bool)"
+                      }
+                    },
+                    "id": 142,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "483:42:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 139,
+                  "id": 143,
+                  "nodeType": "Return",
+                  "src": "476:49:3"
+                }
+              ]
+            },
+            "functionSelector": "e75808da",
+            "id": 145,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isContractOperational",
+            "nameLocation": "414:21:3",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 136,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "435:2:3"
+            },
+            "returnParameters": {
+              "id": 139,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 138,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 145,
+                  "src": "461:4:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 137,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "461:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "460:6:3"
+            },
+            "scope": 160,
+            "src": "405:127:3",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 158,
+              "nodeType": "Block",
+              "src": "565:96:3",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 151,
+                            "name": "suretyDataContract",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1232,
+                            "src": "589:18:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_BaseSuretyData_$2354",
+                              "typeString": "contract BaseSuretyData"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_BaseSuretyData_$2354",
+                              "typeString": "contract BaseSuretyData"
+                            }
+                          ],
+                          "id": 150,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "581:7:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": {
+                            "id": 149,
+                            "name": "address",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "581:7:3",
+                            "typeDescriptions": {}
+                          }
+                        },
+                        "id": 152,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "581:27:3",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 153,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4294967281,
+                          "src": "610:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 154,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "value",
+                        "nodeType": "MemberAccess",
+                        "src": "610:9:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "hexValue": "43616e6e6f742066756e642073757265747944617461436f6e7472616374",
+                        "id": 155,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "621:32:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_c0c555e1e4ee3cc41b9d167195c219d81fef53ae372305ec7ef56002c72aacae",
+                          "typeString": "literal_string \"Cannot fund suretyDataContract\""
+                        },
+                        "value": "Cannot fund suretyDataContract"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_c0c555e1e4ee3cc41b9d167195c219d81fef53ae372305ec7ef56002c72aacae",
+                          "typeString": "literal_string \"Cannot fund suretyDataContract\""
+                        }
+                      ],
+                      "id": 148,
+                      "name": "payTo",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2423,
+                      "src": "575:5:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (address,uint256,string memory)"
+                      }
+                    },
+                    "id": 156,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "575:79:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 157,
+                  "nodeType": "ExpressionStatement",
+                  "src": "575:79:3"
+                }
+              ]
+            },
+            "id": 159,
+            "implemented": true,
+            "kind": "receive",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 146,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "545:2:3"
+            },
+            "returnParameters": {
+              "id": 147,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "565:0:3"
+            },
+            "scope": 160,
+            "src": "538:123:3",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 161,
+        "src": "174:490:3",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:634:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-06-11T12:15:55.537Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "constructor": {
+        "notice": "API"
+      }
+    },
+    "version": 1
+  }
+}

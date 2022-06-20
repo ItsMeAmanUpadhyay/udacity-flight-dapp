@@ -1,0 +1,158 @@
+{
+  "contractName": "BaseAppInsurerController",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/app/base/BaseAppInsurerController.sol\":\"BaseAppInsurerController\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/app/base/BaseAppInsurerController.sol\":{\"keccak256\":\"0x09563452d22e6ac37e97013ef9fbbea7450fbfed43191d9b9a089708dda71519\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://01a9ad5a1c3d9d9c8317c6344991445223f72382ae22c2dc45ae3661bbdc4904\",\"dweb:/ipfs/QmaHAiH96pDBHMx8et7mVVPKqdQXqAKwcdftYYhxn2fHPa\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\nabstract contract BaseAppInsurerController {\n    function requireRegisteredAirline(address airlineAddress, string memory errorMsg) view internal virtual;\n}\n",
+  "sourcePath": "/Volumes/Others/blockchain/udacity/flight-udacity-dapp/contracts/app/base/BaseAppInsurerController.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/app/base/BaseAppInsurerController.sol",
+    "exportedSymbols": {
+      "BaseAppInsurerController": [
+        1284
+      ]
+    },
+    "id": 1285,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1276,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".5"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:9"
+      },
+      {
+        "abstract": true,
+        "baseContracts": [],
+        "canonicalName": "BaseAppInsurerController",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": false,
+        "id": 1284,
+        "linearizedBaseContracts": [
+          1284
+        ],
+        "name": "BaseAppInsurerController",
+        "nameLocation": "75:24:9",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 1283,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "requireRegisteredAirline",
+            "nameLocation": "115:24:9",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1281,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1278,
+                  "mutability": "mutable",
+                  "name": "airlineAddress",
+                  "nameLocation": "148:14:9",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1283,
+                  "src": "140:22:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1277,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "140:7:9",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1280,
+                  "mutability": "mutable",
+                  "name": "errorMsg",
+                  "nameLocation": "178:8:9",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1283,
+                  "src": "164:22:9",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1279,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "164:6:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "139:48:9"
+            },
+            "returnParameters": {
+              "id": 1282,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "209:0:9"
+            },
+            "scope": 1284,
+            "src": "106:104:9",
+            "stateMutability": "view",
+            "virtual": true,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 1285,
+        "src": "57:155:9",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:181:9"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-06-11T12:15:55.575Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

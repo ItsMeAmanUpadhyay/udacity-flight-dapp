@@ -1,0 +1,212 @@
+{
+  "contractName": "BaseOracleListenerHandler",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/app/base/BaseOracleListenerHandler.sol\":\"BaseOracleListenerHandler\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/app/base/BaseOracleListenerHandler.sol\":{\"keccak256\":\"0x91feafab84f963d6967d82b230934718d784ade940d76764356f3d52ff10bb64\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://10d98010cfb0d40b999820c7aa1fa6b8e7009c2874de47fad8b0c0c9df7f19a7\",\"dweb:/ipfs/QmdF2jdHHxyKD1QL2S5M8YFtxDreBiSC9jjmTKeg5aECaP\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\nabstract contract BaseOracleListenerHandler {\n    function processFlightStatusInfoUpdated(address airlineAddress, string memory flightNumber, uint256 departureTime, uint8 statusCode) internal virtual;\n}\n",
+  "sourcePath": "/Volumes/Others/blockchain/udacity/flight-udacity-dapp/contracts/app/base/BaseOracleListenerHandler.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/app/base/BaseOracleListenerHandler.sol",
+    "exportedSymbols": {
+      "BaseOracleListenerHandler": [
+        1298
+      ]
+    },
+    "id": 1299,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1286,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".5"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:10"
+      },
+      {
+        "abstract": true,
+        "baseContracts": [],
+        "canonicalName": "BaseOracleListenerHandler",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": false,
+        "id": 1298,
+        "linearizedBaseContracts": [
+          1298
+        ],
+        "name": "BaseOracleListenerHandler",
+        "nameLocation": "75:25:10",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 1297,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "processFlightStatusInfoUpdated",
+            "nameLocation": "116:30:10",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1295,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1288,
+                  "mutability": "mutable",
+                  "name": "airlineAddress",
+                  "nameLocation": "155:14:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1297,
+                  "src": "147:22:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1287,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "147:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1290,
+                  "mutability": "mutable",
+                  "name": "flightNumber",
+                  "nameLocation": "185:12:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1297,
+                  "src": "171:26:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1289,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "171:6:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1292,
+                  "mutability": "mutable",
+                  "name": "departureTime",
+                  "nameLocation": "207:13:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1297,
+                  "src": "199:21:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1291,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "199:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1294,
+                  "mutability": "mutable",
+                  "name": "statusCode",
+                  "nameLocation": "228:10:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1297,
+                  "src": "222:16:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 1293,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "222:5:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "146:93:10"
+            },
+            "returnParameters": {
+              "id": 1296,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "256:0:10"
+            },
+            "scope": 1298,
+            "src": "107:150:10",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 1299,
+        "src": "57:202:10",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:228:10"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-06-11T12:15:55.576Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

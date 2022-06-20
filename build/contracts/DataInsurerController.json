@@ -1,0 +1,4158 @@
+{
+  "contractName": "DataInsurerController",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "sponsorAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amountPaid",
+          "type": "uint256"
+        }
+      ],
+      "name": "FundingReceived",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "insurerAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "state",
+          "type": "uint256"
+        }
+      ],
+      "name": "InsurerStateChanged",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dataContract",
+          "type": "address"
+        }
+      ],
+      "name": "authorizeContractCaller",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dataContract",
+          "type": "address"
+        }
+      ],
+      "name": "deauthorizeContractCaller",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "isContractOperational",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pauseContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "resumeContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_insurerFee",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_numberOfFullyQualifiedInsurersRequiredForMultiParityConsensus",
+          "type": "uint256"
+        }
+      ],
+      "name": "setInsurerConfigParams",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getInsurerFee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getNumberOfFullyQualifiedInsurersRequiredForMultiParityConsensus",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "insurerAddress",
+          "type": "address"
+        }
+      ],
+      "name": "registerTheFirstInsurer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "approverInsurerAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "insurerAddress",
+          "type": "address"
+        }
+      ],
+      "name": "registerInsurer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "insurerAddress",
+          "type": "address"
+        }
+      ],
+      "name": "payInsurerFee",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"sponsorAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amountPaid\",\"type\":\"uint256\"}],\"name\":\"FundingReceived\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"insurerAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"state\",\"type\":\"uint256\"}],\"name\":\"InsurerStateChanged\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dataContract\",\"type\":\"address\"}],\"name\":\"authorizeContractCaller\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dataContract\",\"type\":\"address\"}],\"name\":\"deauthorizeContractCaller\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getInsurerFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getNumberOfFullyQualifiedInsurersRequiredForMultiParityConsensus\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"isContractOperational\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pauseContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"insurerAddress\",\"type\":\"address\"}],\"name\":\"payInsurerFee\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"approverInsurerAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"insurerAddress\",\"type\":\"address\"}],\"name\":\"registerInsurer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"insurerAddress\",\"type\":\"address\"}],\"name\":\"registerTheFirstInsurer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"resumeContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_insurerFee\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_numberOfFullyQualifiedInsurersRequiredForMultiParityConsensus\",\"type\":\"uint256\"}],\"name\":\"setInsurerConfigParams\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"events\":{\"FundingReceived(address,uint256)\":{\"notice\":\"API\"},\"InsurerStateChanged(address,uint256)\":{\"notice\":\"API\"}},\"kind\":\"user\",\"methods\":{\"isContractOperational()\":{\"notice\":\"API\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/data/DataInsurerController.sol\":\"DataInsurerController\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/data/DataContract.sol\":{\"keccak256\":\"0x09554de2095dd27347f8135ea44e0d04bb78a0598e1b713e0e148cf90dc6e228\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6940a0a6ac17183dbadc20b6d1e322aa117aad51c1753124b5e0a76875ed231f\",\"dweb:/ipfs/QmXscL3ThbKB1yCpc78PVysje2FmUpD76TXnYujfoCVJeu\"]},\"project:/contracts/data/DataInsurerController.sol\":{\"keccak256\":\"0x31783cd4a0bf5f5f1831b0719e11ad4578efae30681daf90b744f94728e25a61\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4fbed1026b108d22f7105de79df60b9e75a5010d3eddd9b51f1f1ad4e848c0a9\",\"dweb:/ipfs/QmU27DBhtAuG6vhBCKUfifGLR38m3AzNGNqrSewM5c2ksq\"]},\"project:/contracts/data/DataOperationalContract.sol\":{\"keccak256\":\"0xe4ac520334a5f4c655f1084353abac0bf4222dfa789ac226d7fbe8a997035232\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://16d663b0139bdd643722b5e54abf019878a69d68461b0d3bcf29c886a239e27d\",\"dweb:/ipfs/QmXnXQitMrNuBKQSFMUakZmyVjyDGYNFku2RZxeJeGs8j6\"]},\"project:/contracts/data/base/BaseDataContract.sol\":{\"keccak256\":\"0x5b1722dbe70c87957e3938477ff976ca9562ff4263be62e91ef978da51b5da78\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f5eb2452f4a9d433bcb8dd9fa3a3ed3aaceed103feedf7522eecdbf187ad5e9f\",\"dweb:/ipfs/QmZMnTwHhTm5f2JR29BPpemqV4XDq7L4RA7yYNm8hqPDGn\"]},\"project:/contracts/data/base/BaseDataInsurerController.sol\":{\"keccak256\":\"0xfc7283989185c16c99ecb17f23bf5687d5808d408c682abcabd508e91fb59fed\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b1b17fd611c59125bd1390f6e24ff49e080fc2893f80eb4b68f7f6b807ded1f8\",\"dweb:/ipfs/QmW5tq66BqMWzrwNqD15zu5VGHNvgR1Tub7UtCtaDtxsWx\"]},\"project:/contracts/shared/BaseOperationalContract.sol\":{\"keccak256\":\"0x3518e25104d3dce8f60d8d2558aa412222d5667b5732b0ce607401cae6eaa53a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1b17eb8025748c4e8689508974695ff3771937130a4de3bedeb2f3a1235be6b8\",\"dweb:/ipfs/QmXff87UaNbtCRoowc4gfZKiJu2Mef6d7VAMK5fZLxUzAw\"]},\"project:/contracts/shared/OwnableContract.sol\":{\"keccak256\":\"0x5a06d6de5664f8b7db1caff84cd462c5a3d2bf02836174ea7b790bceef734162\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://359df35a435590291db9d96c450fc992cc7bc17a37bf1aa1c53e8480b38d51db\",\"dweb:/ipfs/QmVohWGS7mVTewqvEaksGb6LXdtR2TDJEjYKf1VeRu5sof\"]},\"project:/contracts/shared/PayableContract.sol\":{\"keccak256\":\"0xef48e65cf9cec25b2bacc2075549c6075bd299c53b43e13a0b8c7b753f4f3cdf\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2124c3fb367ee14110b7b2f05207b6e1d1fd6b51d0001687e545413a9584527d\",\"dweb:/ipfs/QmWWKnNoW7cvbmm8x6DUuPCXRVq43TGzZMy3Gt63dtZKu1\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\nimport \"./DataContract.sol\";\nimport \"./base/BaseDataInsurerController.sol\";\nimport \"../shared/PayableContract.sol\";\nimport \"./DataOperationalContract.sol\";\n\nabstract contract DataInsurerController is PayableContract, DataOperationalContract, BaseDataInsurerController, DataContract {\n\n    // configurable parameters by contract owner\n    uint private insurerFee = 10 ether;\n    uint private numberOfFullyQualifiedInsurersRequiredForMultiParityConsensus = 4;\n\n    enum InsurerState{\n        UNREGISTERED, // 0\n        REGISTERED, // 1\n        FULLY_QUALIFIED // 2\n    }\n\n    struct InsurerProfile {\n        InsurerState state;\n        uint amountPaid;\n        uint16 approversCtr;\n        mapping(address => bool) approvers; // key approverInsurerAddress\n    }\n\n    uint fullyQualifiedInsurersCtr;\n    mapping(address => InsurerProfile) private insurers;\n\n    /**\n    * API\n    */\n\n    event InsurerStateChanged(address insurerAddress, uint state);\n\n    function setInsurerConfigParams(uint _insurerFee, uint _numberOfFullyQualifiedInsurersRequiredForMultiParityConsensus) external override requireContractOwner {\n        insurerFee = _insurerFee;\n        numberOfFullyQualifiedInsurersRequiredForMultiParityConsensus = _numberOfFullyQualifiedInsurersRequiredForMultiParityConsensus;\n    }\n\n    function getInsurerFee() external view override returns (uint) {\n        return insurerFee;\n    }\n\n    function getNumberOfFullyQualifiedInsurersRequiredForMultiParityConsensus() external view override returns (uint) {\n        return numberOfFullyQualifiedInsurersRequiredForMultiParityConsensus;\n    }\n\n    function registerTheFirstInsurer(address insurerAddress) external override requireAuthorizedCaller {\n        require(fullyQualifiedInsurersCtr == 0, \"The first fully-qualified insurer can be registered only at contract setup phase\");\n        require(insurers[insurerAddress].state == InsurerState.UNREGISTERED, \"Insurer cannot be registered twice\");\n\n        insurers[insurerAddress].state = InsurerState.REGISTERED;\n\n        triggerInsurerStateChange(insurerAddress);\n    }\n\n    function registerInsurer(address approverInsurerAddress, address insurerAddress) external override requireIsOperational requireFullyQualifiedInsurer(approverInsurerAddress) requireAuthorizedCaller {\n        require(insurers[insurerAddress].state == InsurerState.UNREGISTERED, \"Insurer has been already registered\");\n        require(insurers[insurerAddress].approvers[approverInsurerAddress] == false, \"Insurer has been already approved for registration by this caller\");\n\n        insurers[insurerAddress].approvers[approverInsurerAddress] = true;\n        insurers[insurerAddress].approversCtr++;\n\n        if (isInsurerApproved(insurerAddress)) {\n            insurers[insurerAddress].state = InsurerState.REGISTERED;\n            triggerInsurerStateChange(insurerAddress);\n        }\n    }\n\n    function payInsurerFee(address insurerAddress) external payable override requireIsOperational requireAuthorizedCaller {\n        require(insurers[insurerAddress].state == InsurerState.REGISTERED, \"Insurer is not yet registered\");\n        require(msg.value == insurerFee, \"Invalid insurer's fee paid\");\n\n        insurers[insurerAddress].state = InsurerState.FULLY_QUALIFIED;\n        insurers[insurerAddress].amountPaid = getInsurerPaidAmount();\n        fullyQualifiedInsurersCtr++;\n\n        triggerInsurerStateChange(insurerAddress);\n    }\n\n    /**\n    * Modifiers and private methods\n    */\n\n    modifier requireFullyQualifiedInsurer(address approverInsurerAddress){\n        require(insurers[approverInsurerAddress].state == InsurerState.FULLY_QUALIFIED, \"Caller is not a fully qualified insurer\");\n        _;\n    }\n\n    function getInsurerPaidAmount() private view returns (uint){\n        if (msg.value >= insurerFee) {\n            return insurerFee;\n        }\n\n        return msg.value;\n    }\n\n    function isInsurerApproved(address insurerAddress) private view returns (bool) {\n        if (fullyQualifiedInsurersCtr < numberOfFullyQualifiedInsurersRequiredForMultiParityConsensus) {\n            return true;\n        }\n\n        return insurers[insurerAddress].approversCtr * 2 >= fullyQualifiedInsurersCtr;\n    }\n\n    function triggerInsurerStateChange(address insurerAddress) private {\n        emit InsurerStateChanged(insurerAddress, uint(insurers[insurerAddress].state));\n    }\n\n}\n",
+  "sourcePath": "/Volumes/Others/blockchain/udacity/flight-udacity-dapp/contracts/data/DataInsurerController.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/data/DataInsurerController.sol",
+    "exportedSymbols": {
+      "BaseDataContract": [
+        2249
+      ],
+      "BaseDataInsurerController": [
+        2325
+      ],
+      "BaseOperationalContract": [
+        2339
+      ],
+      "DataContract": [
+        1396
+      ],
+      "DataInsurerController": [
+        2182
+      ],
+      "DataOperationalContract": [
+        2236
+      ],
+      "OwnableContract": [
+        2380
+      ],
+      "PayableContract": [
+        2424
+      ]
+    },
+    "id": 2183,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1857,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".5"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:13"
+      },
+      {
+        "absolutePath": "project:/contracts/data/DataContract.sol",
+        "file": "./DataContract.sol",
+        "id": 1858,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2183,
+        "sourceUnit": 1397,
+        "src": "57:28:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/data/base/BaseDataInsurerController.sol",
+        "file": "./base/BaseDataInsurerController.sol",
+        "id": 1859,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2183,
+        "sourceUnit": 2326,
+        "src": "86:46:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/shared/PayableContract.sol",
+        "file": "../shared/PayableContract.sol",
+        "id": 1860,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2183,
+        "sourceUnit": 2425,
+        "src": "133:39:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/data/DataOperationalContract.sol",
+        "file": "./DataOperationalContract.sol",
+        "id": 1861,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2183,
+        "sourceUnit": 2237,
+        "src": "173:39:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 1862,
+              "name": "PayableContract",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 2424,
+              "src": "257:15:13"
+            },
+            "id": 1863,
+            "nodeType": "InheritanceSpecifier",
+            "src": "257:15:13"
+          },
+          {
+            "baseName": {
+              "id": 1864,
+              "name": "DataOperationalContract",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 2236,
+              "src": "274:23:13"
+            },
+            "id": 1865,
+            "nodeType": "InheritanceSpecifier",
+            "src": "274:23:13"
+          },
+          {
+            "baseName": {
+              "id": 1866,
+              "name": "BaseDataInsurerController",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 2325,
+              "src": "299:25:13"
+            },
+            "id": 1867,
+            "nodeType": "InheritanceSpecifier",
+            "src": "299:25:13"
+          },
+          {
+            "baseName": {
+              "id": 1868,
+              "name": "DataContract",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 1396,
+              "src": "326:12:13"
+            },
+            "id": 1869,
+            "nodeType": "InheritanceSpecifier",
+            "src": "326:12:13"
+          }
+        ],
+        "canonicalName": "DataInsurerController",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 2182,
+        "linearizedBaseContracts": [
+          2182,
+          1396,
+          2325,
+          2236,
+          2380,
+          2249,
+          2339,
+          2424
+        ],
+        "name": "DataInsurerController",
+        "nameLocation": "232:21:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 1872,
+            "mutability": "mutable",
+            "name": "insurerFee",
+            "nameLocation": "408:10:13",
+            "nodeType": "VariableDeclaration",
+            "scope": 2182,
+            "src": "395:34:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1870,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "395:4:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "3130",
+              "id": 1871,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "421:8:13",
+              "subdenomination": "ether",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_10000000000000000000_by_1",
+                "typeString": "int_const 10000000000000000000"
+              },
+              "value": "10"
+            },
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 1875,
+            "mutability": "mutable",
+            "name": "numberOfFullyQualifiedInsurersRequiredForMultiParityConsensus",
+            "nameLocation": "448:61:13",
+            "nodeType": "VariableDeclaration",
+            "scope": 2182,
+            "src": "435:78:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1873,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "435:4:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "34",
+              "id": 1874,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "512:1:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_4_by_1",
+                "typeString": "int_const 4"
+              },
+              "value": "4"
+            },
+            "visibility": "private"
+          },
+          {
+            "canonicalName": "DataInsurerController.InsurerState",
+            "id": 1879,
+            "members": [
+              {
+                "id": 1876,
+                "name": "UNREGISTERED",
+                "nameLocation": "547:12:13",
+                "nodeType": "EnumValue",
+                "src": "547:12:13"
+              },
+              {
+                "id": 1877,
+                "name": "REGISTERED",
+                "nameLocation": "574:10:13",
+                "nodeType": "EnumValue",
+                "src": "574:10:13"
+              },
+              {
+                "id": 1878,
+                "name": "FULLY_QUALIFIED",
+                "nameLocation": "599:15:13",
+                "nodeType": "EnumValue",
+                "src": "599:15:13"
+              }
+            ],
+            "name": "InsurerState",
+            "nameLocation": "525:12:13",
+            "nodeType": "EnumDefinition",
+            "src": "520:105:13"
+          },
+          {
+            "canonicalName": "DataInsurerController.InsurerProfile",
+            "id": 1891,
+            "members": [
+              {
+                "constant": false,
+                "id": 1882,
+                "mutability": "mutable",
+                "name": "state",
+                "nameLocation": "676:5:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1891,
+                "src": "663:18:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_InsurerState_$1879",
+                  "typeString": "enum DataInsurerController.InsurerState"
+                },
+                "typeName": {
+                  "id": 1881,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 1880,
+                    "name": "InsurerState",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 1879,
+                    "src": "663:12:13"
+                  },
+                  "referencedDeclaration": 1879,
+                  "src": "663:12:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_InsurerState_$1879",
+                    "typeString": "enum DataInsurerController.InsurerState"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1884,
+                "mutability": "mutable",
+                "name": "amountPaid",
+                "nameLocation": "696:10:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1891,
+                "src": "691:15:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1883,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "691:4:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1886,
+                "mutability": "mutable",
+                "name": "approversCtr",
+                "nameLocation": "723:12:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1891,
+                "src": "716:19:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint16",
+                  "typeString": "uint16"
+                },
+                "typeName": {
+                  "id": 1885,
+                  "name": "uint16",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "716:6:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1890,
+                "mutability": "mutable",
+                "name": "approvers",
+                "nameLocation": "770:9:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1891,
+                "src": "745:34:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                  "typeString": "mapping(address => bool)"
+                },
+                "typeName": {
+                  "id": 1889,
+                  "keyType": {
+                    "id": 1887,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "753:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "745:24:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                    "typeString": "mapping(address => bool)"
+                  },
+                  "valueType": {
+                    "id": 1888,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "764:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "InsurerProfile",
+            "nameLocation": "638:14:13",
+            "nodeType": "StructDefinition",
+            "scope": 2182,
+            "src": "631:185:13",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 1893,
+            "mutability": "mutable",
+            "name": "fullyQualifiedInsurersCtr",
+            "nameLocation": "827:25:13",
+            "nodeType": "VariableDeclaration",
+            "scope": 2182,
+            "src": "822:30:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1892,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "822:4:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 1898,
+            "mutability": "mutable",
+            "name": "insurers",
+            "nameLocation": "901:8:13",
+            "nodeType": "VariableDeclaration",
+            "scope": 2182,
+            "src": "858:51:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_InsurerProfile_$1891_storage_$",
+              "typeString": "mapping(address => struct DataInsurerController.InsurerProfile)"
+            },
+            "typeName": {
+              "id": 1897,
+              "keyType": {
+                "id": 1894,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "866:7:13",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "858:34:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_InsurerProfile_$1891_storage_$",
+                "typeString": "mapping(address => struct DataInsurerController.InsurerProfile)"
+              },
+              "valueType": {
+                "id": 1896,
+                "nodeType": "UserDefinedTypeName",
+                "pathNode": {
+                  "id": 1895,
+                  "name": "InsurerProfile",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1891,
+                  "src": "877:14:13"
+                },
+                "referencedDeclaration": 1891,
+                "src": "877:14:13",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_InsurerProfile_$1891_storage_ptr",
+                  "typeString": "struct DataInsurerController.InsurerProfile"
+                }
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 1899,
+              "nodeType": "StructuredDocumentation",
+              "src": "916:20:13",
+              "text": " API"
+            },
+            "eventSelector": "9c057abe77e7843cc934232caae9e813533b45693ca557a04758f6e22be06ce5",
+            "id": 1905,
+            "name": "InsurerStateChanged",
+            "nameLocation": "948:19:13",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1904,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1901,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "insurerAddress",
+                  "nameLocation": "976:14:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1905,
+                  "src": "968:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1900,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "968:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1903,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "state",
+                  "nameLocation": "997:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1905,
+                  "src": "992:10:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1902,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "992:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "967:36:13"
+            },
+            "src": "942:62:13"
+          },
+          {
+            "baseFunctions": [
+              2297
+            ],
+            "body": {
+              "id": 1923,
+              "nodeType": "Block",
+              "src": "1168:177:13",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 1917,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 1915,
+                      "name": "insurerFee",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1872,
+                      "src": "1178:10:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 1916,
+                      "name": "_insurerFee",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1907,
+                      "src": "1191:11:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1178:24:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 1918,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1178:24:13"
+                },
+                {
+                  "expression": {
+                    "id": 1921,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 1919,
+                      "name": "numberOfFullyQualifiedInsurersRequiredForMultiParityConsensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1875,
+                      "src": "1212:61:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 1920,
+                      "name": "_numberOfFullyQualifiedInsurersRequiredForMultiParityConsensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1909,
+                      "src": "1276:62:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1212:126:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 1922,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1212:126:13"
+                }
+              ]
+            },
+            "functionSelector": "d87e44ab",
+            "id": 1924,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 1913,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 1912,
+                  "name": "requireContractOwner",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 2379,
+                  "src": "1147:20:13"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1147:20:13"
+              }
+            ],
+            "name": "setInsurerConfigParams",
+            "nameLocation": "1019:22:13",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 1911,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1138:8:13"
+            },
+            "parameters": {
+              "id": 1910,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1907,
+                  "mutability": "mutable",
+                  "name": "_insurerFee",
+                  "nameLocation": "1047:11:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1924,
+                  "src": "1042:16:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1906,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1042:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1909,
+                  "mutability": "mutable",
+                  "name": "_numberOfFullyQualifiedInsurersRequiredForMultiParityConsensus",
+                  "nameLocation": "1065:62:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1924,
+                  "src": "1060:67:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1908,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1060:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1041:87:13"
+            },
+            "returnParameters": {
+              "id": 1914,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1168:0:13"
+            },
+            "scope": 2182,
+            "src": "1010:335:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "baseFunctions": [
+              2302
+            ],
+            "body": {
+              "id": 1932,
+              "nodeType": "Block",
+              "src": "1414:34:13",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 1930,
+                    "name": "insurerFee",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 1872,
+                    "src": "1431:10:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 1929,
+                  "id": 1931,
+                  "nodeType": "Return",
+                  "src": "1424:17:13"
+                }
+              ]
+            },
+            "functionSelector": "4cb3ce05",
+            "id": 1933,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getInsurerFee",
+            "nameLocation": "1360:13:13",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 1926,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1390:8:13"
+            },
+            "parameters": {
+              "id": 1925,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1373:2:13"
+            },
+            "returnParameters": {
+              "id": 1929,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1928,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1933,
+                  "src": "1408:4:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1927,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1408:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1407:6:13"
+            },
+            "scope": 2182,
+            "src": "1351:97:13",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "baseFunctions": [
+              2307
+            ],
+            "body": {
+              "id": 1941,
+              "nodeType": "Block",
+              "src": "1568:85:13",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 1939,
+                    "name": "numberOfFullyQualifiedInsurersRequiredForMultiParityConsensus",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 1875,
+                    "src": "1585:61:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 1938,
+                  "id": 1940,
+                  "nodeType": "Return",
+                  "src": "1578:68:13"
+                }
+              ]
+            },
+            "functionSelector": "c7974cae",
+            "id": 1942,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getNumberOfFullyQualifiedInsurersRequiredForMultiParityConsensus",
+            "nameLocation": "1463:64:13",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 1935,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1544:8:13"
+            },
+            "parameters": {
+              "id": 1934,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1527:2:13"
+            },
+            "returnParameters": {
+              "id": 1938,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1937,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1942,
+                  "src": "1562:4:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1936,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1562:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1561:6:13"
+            },
+            "scope": 2182,
+            "src": "1454:199:13",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "baseFunctions": [
+              2312
+            ],
+            "body": {
+              "id": 1980,
+              "nodeType": "Block",
+              "src": "1758:375:13",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 1953,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "id": 1951,
+                          "name": "fullyQualifiedInsurersCtr",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1893,
+                          "src": "1776:25:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "hexValue": "30",
+                          "id": 1952,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1805:1:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "src": "1776:30:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "5468652066697273742066756c6c792d7175616c696669656420696e73757265722063616e2062652072656769737465726564206f6e6c7920617420636f6e7472616374207365747570207068617365",
+                        "id": 1954,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1808:82:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_f25b04389d51c8df564aa6c3f0b23b4929cbb37f9276e1aa506e7ff712fc5c41",
+                          "typeString": "literal_string \"The first fully-qualified insurer can be registered only at contract setup phase\""
+                        },
+                        "value": "The first fully-qualified insurer can be registered only at contract setup phase"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_f25b04389d51c8df564aa6c3f0b23b4929cbb37f9276e1aa506e7ff712fc5c41",
+                          "typeString": "literal_string \"The first fully-qualified insurer can be registered only at contract setup phase\""
+                        }
+                      ],
+                      "id": 1950,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "1768:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1955,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1768:123:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1956,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1768:123:13"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_enum$_InsurerState_$1879",
+                          "typeString": "enum DataInsurerController.InsurerState"
+                        },
+                        "id": 1964,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "expression": {
+                            "baseExpression": {
+                              "id": 1958,
+                              "name": "insurers",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1898,
+                              "src": "1909:8:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_InsurerProfile_$1891_storage_$",
+                                "typeString": "mapping(address => struct DataInsurerController.InsurerProfile storage ref)"
+                              }
+                            },
+                            "id": 1960,
+                            "indexExpression": {
+                              "id": 1959,
+                              "name": "insurerAddress",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1944,
+                              "src": "1918:14:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "1909:24:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_InsurerProfile_$1891_storage",
+                              "typeString": "struct DataInsurerController.InsurerProfile storage ref"
+                            }
+                          },
+                          "id": 1961,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "state",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 1882,
+                          "src": "1909:30:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_InsurerState_$1879",
+                            "typeString": "enum DataInsurerController.InsurerState"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "expression": {
+                            "id": 1962,
+                            "name": "InsurerState",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1879,
+                            "src": "1943:12:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_enum$_InsurerState_$1879_$",
+                              "typeString": "type(enum DataInsurerController.InsurerState)"
+                            }
+                          },
+                          "id": 1963,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "UNREGISTERED",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 1876,
+                          "src": "1943:25:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_InsurerState_$1879",
+                            "typeString": "enum DataInsurerController.InsurerState"
+                          }
+                        },
+                        "src": "1909:59:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "496e73757265722063616e6e6f742062652072656769737465726564207477696365",
+                        "id": 1965,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1970:36:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_2bc1ec4808161e97363adfe695a62ddfe286e6467753564fcf61c530bbfd3032",
+                          "typeString": "literal_string \"Insurer cannot be registered twice\""
+                        },
+                        "value": "Insurer cannot be registered twice"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_2bc1ec4808161e97363adfe695a62ddfe286e6467753564fcf61c530bbfd3032",
+                          "typeString": "literal_string \"Insurer cannot be registered twice\""
+                        }
+                      ],
+                      "id": 1957,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "1901:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1966,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1901:106:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1967,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1901:106:13"
+                },
+                {
+                  "expression": {
+                    "id": 1974,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "baseExpression": {
+                          "id": 1968,
+                          "name": "insurers",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1898,
+                          "src": "2018:8:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_InsurerProfile_$1891_storage_$",
+                            "typeString": "mapping(address => struct DataInsurerController.InsurerProfile storage ref)"
+                          }
+                        },
+                        "id": 1970,
+                        "indexExpression": {
+                          "id": 1969,
+                          "name": "insurerAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1944,
+                          "src": "2027:14:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "2018:24:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_InsurerProfile_$1891_storage",
+                          "typeString": "struct DataInsurerController.InsurerProfile storage ref"
+                        }
+                      },
+                      "id": 1971,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "state",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1882,
+                      "src": "2018:30:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_InsurerState_$1879",
+                        "typeString": "enum DataInsurerController.InsurerState"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 1972,
+                        "name": "InsurerState",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1879,
+                        "src": "2051:12:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_InsurerState_$1879_$",
+                          "typeString": "type(enum DataInsurerController.InsurerState)"
+                        }
+                      },
+                      "id": 1973,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "REGISTERED",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1877,
+                      "src": "2051:23:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_InsurerState_$1879",
+                        "typeString": "enum DataInsurerController.InsurerState"
+                      }
+                    },
+                    "src": "2018:56:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_InsurerState_$1879",
+                      "typeString": "enum DataInsurerController.InsurerState"
+                    }
+                  },
+                  "id": 1975,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2018:56:13"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 1977,
+                        "name": "insurerAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1944,
+                        "src": "2111:14:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 1976,
+                      "name": "triggerInsurerStateChange",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2181,
+                      "src": "2085:25:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 1978,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2085:41:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1979,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2085:41:13"
+                }
+              ]
+            },
+            "functionSelector": "be1f7e06",
+            "id": 1981,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 1948,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 1947,
+                  "name": "requireAuthorizedCaller",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1395,
+                  "src": "1734:23:13"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1734:23:13"
+              }
+            ],
+            "name": "registerTheFirstInsurer",
+            "nameLocation": "1668:23:13",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 1946,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1725:8:13"
+            },
+            "parameters": {
+              "id": 1945,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1944,
+                  "mutability": "mutable",
+                  "name": "insurerAddress",
+                  "nameLocation": "1700:14:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1981,
+                  "src": "1692:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1943,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1692:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1691:24:13"
+            },
+            "returnParameters": {
+              "id": 1949,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1758:0:13"
+            },
+            "scope": 2182,
+            "src": "1659:474:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "baseFunctions": [
+              2319
+            ],
+            "body": {
+              "id": 2051,
+              "nodeType": "Block",
+              "src": "2336:589:13",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_enum$_InsurerState_$1879",
+                          "typeString": "enum DataInsurerController.InsurerState"
+                        },
+                        "id": 2003,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "expression": {
+                            "baseExpression": {
+                              "id": 1997,
+                              "name": "insurers",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1898,
+                              "src": "2354:8:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_InsurerProfile_$1891_storage_$",
+                                "typeString": "mapping(address => struct DataInsurerController.InsurerProfile storage ref)"
+                              }
+                            },
+                            "id": 1999,
+                            "indexExpression": {
+                              "id": 1998,
+                              "name": "insurerAddress",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1985,
+                              "src": "2363:14:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "2354:24:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_InsurerProfile_$1891_storage",
+                              "typeString": "struct DataInsurerController.InsurerProfile storage ref"
+                            }
+                          },
+                          "id": 2000,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "state",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 1882,
+                          "src": "2354:30:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_InsurerState_$1879",
+                            "typeString": "enum DataInsurerController.InsurerState"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "expression": {
+                            "id": 2001,
+                            "name": "InsurerState",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1879,
+                            "src": "2388:12:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_enum$_InsurerState_$1879_$",
+                              "typeString": "type(enum DataInsurerController.InsurerState)"
+                            }
+                          },
+                          "id": 2002,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "UNREGISTERED",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 1876,
+                          "src": "2388:25:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_InsurerState_$1879",
+                            "typeString": "enum DataInsurerController.InsurerState"
+                          }
+                        },
+                        "src": "2354:59:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "496e737572657220686173206265656e20616c72656164792072656769737465726564",
+                        "id": 2004,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2415:37:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_b086c006d077f4a3e27d6783783aa88cbe44c03a443148ffcf1ad613a669ea9a",
+                          "typeString": "literal_string \"Insurer has been already registered\""
+                        },
+                        "value": "Insurer has been already registered"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_b086c006d077f4a3e27d6783783aa88cbe44c03a443148ffcf1ad613a669ea9a",
+                          "typeString": "literal_string \"Insurer has been already registered\""
+                        }
+                      ],
+                      "id": 1996,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "2346:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 2005,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2346:107:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2006,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2346:107:13"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 2015,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "baseExpression": {
+                            "expression": {
+                              "baseExpression": {
+                                "id": 2008,
+                                "name": "insurers",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1898,
+                                "src": "2471:8:13",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_mapping$_t_address_$_t_struct$_InsurerProfile_$1891_storage_$",
+                                  "typeString": "mapping(address => struct DataInsurerController.InsurerProfile storage ref)"
+                                }
+                              },
+                              "id": 2010,
+                              "indexExpression": {
+                                "id": 2009,
+                                "name": "insurerAddress",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1985,
+                                "src": "2480:14:13",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "2471:24:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_InsurerProfile_$1891_storage",
+                                "typeString": "struct DataInsurerController.InsurerProfile storage ref"
+                              }
+                            },
+                            "id": 2011,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "approvers",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 1890,
+                            "src": "2471:34:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                              "typeString": "mapping(address => bool)"
+                            }
+                          },
+                          "id": 2013,
+                          "indexExpression": {
+                            "id": 2012,
+                            "name": "approverInsurerAddress",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1983,
+                            "src": "2506:22:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "2471:58:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "hexValue": "66616c7365",
+                          "id": 2014,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "2533:5:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "false"
+                        },
+                        "src": "2471:67:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "496e737572657220686173206265656e20616c726561647920617070726f76656420666f7220726567697374726174696f6e20627920746869732063616c6c6572",
+                        "id": 2016,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2540:67:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_802d2f39a89270d1ed407db35bf40aeb98d26ebf58af1abce3be156ecf6f6585",
+                          "typeString": "literal_string \"Insurer has been already approved for registration by this caller\""
+                        },
+                        "value": "Insurer has been already approved for registration by this caller"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_802d2f39a89270d1ed407db35bf40aeb98d26ebf58af1abce3be156ecf6f6585",
+                          "typeString": "literal_string \"Insurer has been already approved for registration by this caller\""
+                        }
+                      ],
+                      "id": 2007,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "2463:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 2017,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2463:145:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2018,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2463:145:13"
+                },
+                {
+                  "expression": {
+                    "id": 2026,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "expression": {
+                          "baseExpression": {
+                            "id": 2019,
+                            "name": "insurers",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1898,
+                            "src": "2619:8:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_InsurerProfile_$1891_storage_$",
+                              "typeString": "mapping(address => struct DataInsurerController.InsurerProfile storage ref)"
+                            }
+                          },
+                          "id": 2021,
+                          "indexExpression": {
+                            "id": 2020,
+                            "name": "insurerAddress",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1985,
+                            "src": "2628:14:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "2619:24:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_InsurerProfile_$1891_storage",
+                            "typeString": "struct DataInsurerController.InsurerProfile storage ref"
+                          }
+                        },
+                        "id": 2022,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "approvers",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 1890,
+                        "src": "2619:34:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 2024,
+                      "indexExpression": {
+                        "id": 2023,
+                        "name": "approverInsurerAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1983,
+                        "src": "2654:22:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "2619:58:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "hexValue": "74727565",
+                      "id": 2025,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "2680:4:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "2619:65:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 2027,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2619:65:13"
+                },
+                {
+                  "expression": {
+                    "id": 2032,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "2694:39:13",
+                    "subExpression": {
+                      "expression": {
+                        "baseExpression": {
+                          "id": 2028,
+                          "name": "insurers",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1898,
+                          "src": "2694:8:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_InsurerProfile_$1891_storage_$",
+                            "typeString": "mapping(address => struct DataInsurerController.InsurerProfile storage ref)"
+                          }
+                        },
+                        "id": 2030,
+                        "indexExpression": {
+                          "id": 2029,
+                          "name": "insurerAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1985,
+                          "src": "2703:14:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "2694:24:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_InsurerProfile_$1891_storage",
+                          "typeString": "struct DataInsurerController.InsurerProfile storage ref"
+                        }
+                      },
+                      "id": 2031,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "approversCtr",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1886,
+                      "src": "2694:37:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint16",
+                        "typeString": "uint16"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "id": 2033,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2694:39:13"
+                },
+                {
+                  "condition": {
+                    "arguments": [
+                      {
+                        "id": 2035,
+                        "name": "insurerAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1985,
+                        "src": "2766:14:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 2034,
+                      "name": "isInsurerApproved",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2164,
+                      "src": "2748:17:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
+                        "typeString": "function (address) view returns (bool)"
+                      }
+                    },
+                    "id": 2036,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2748:33:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 2050,
+                  "nodeType": "IfStatement",
+                  "src": "2744:175:13",
+                  "trueBody": {
+                    "id": 2049,
+                    "nodeType": "Block",
+                    "src": "2783:136:13",
+                    "statements": [
+                      {
+                        "expression": {
+                          "id": 2043,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "expression": {
+                              "baseExpression": {
+                                "id": 2037,
+                                "name": "insurers",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1898,
+                                "src": "2797:8:13",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_mapping$_t_address_$_t_struct$_InsurerProfile_$1891_storage_$",
+                                  "typeString": "mapping(address => struct DataInsurerController.InsurerProfile storage ref)"
+                                }
+                              },
+                              "id": 2039,
+                              "indexExpression": {
+                                "id": 2038,
+                                "name": "insurerAddress",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1985,
+                                "src": "2806:14:13",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "2797:24:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_InsurerProfile_$1891_storage",
+                                "typeString": "struct DataInsurerController.InsurerProfile storage ref"
+                              }
+                            },
+                            "id": 2040,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "memberName": "state",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 1882,
+                            "src": "2797:30:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_InsurerState_$1879",
+                              "typeString": "enum DataInsurerController.InsurerState"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "expression": {
+                              "id": 2041,
+                              "name": "InsurerState",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1879,
+                              "src": "2830:12:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_InsurerState_$1879_$",
+                                "typeString": "type(enum DataInsurerController.InsurerState)"
+                              }
+                            },
+                            "id": 2042,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "REGISTERED",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 1877,
+                            "src": "2830:23:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_InsurerState_$1879",
+                              "typeString": "enum DataInsurerController.InsurerState"
+                            }
+                          },
+                          "src": "2797:56:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_InsurerState_$1879",
+                            "typeString": "enum DataInsurerController.InsurerState"
+                          }
+                        },
+                        "id": 2044,
+                        "nodeType": "ExpressionStatement",
+                        "src": "2797:56:13"
+                      },
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "id": 2046,
+                              "name": "insurerAddress",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1985,
+                              "src": "2893:14:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            ],
+                            "id": 2045,
+                            "name": "triggerInsurerStateChange",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2181,
+                            "src": "2867:25:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                              "typeString": "function (address)"
+                            }
+                          },
+                          "id": 2047,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "2867:41:13",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 2048,
+                        "nodeType": "ExpressionStatement",
+                        "src": "2867:41:13"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "functionSelector": "9b284ae2",
+            "id": 2052,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 1989,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 1988,
+                  "name": "requireIsOperational",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 2235,
+                  "src": "2238:20:13"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "2238:20:13"
+              },
+              {
+                "arguments": [
+                  {
+                    "id": 1991,
+                    "name": "approverInsurerAddress",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 1983,
+                    "src": "2288:22:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  }
+                ],
+                "id": 1992,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 1990,
+                  "name": "requireFullyQualifiedInsurer",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 2123,
+                  "src": "2259:28:13"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "2259:52:13"
+              },
+              {
+                "id": 1994,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 1993,
+                  "name": "requireAuthorizedCaller",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1395,
+                  "src": "2312:23:13"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "2312:23:13"
+              }
+            ],
+            "name": "registerInsurer",
+            "nameLocation": "2148:15:13",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 1987,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "2229:8:13"
+            },
+            "parameters": {
+              "id": 1986,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1983,
+                  "mutability": "mutable",
+                  "name": "approverInsurerAddress",
+                  "nameLocation": "2172:22:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2052,
+                  "src": "2164:30:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1982,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2164:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1985,
+                  "mutability": "mutable",
+                  "name": "insurerAddress",
+                  "nameLocation": "2204:14:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2052,
+                  "src": "2196:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1984,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2196:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2163:56:13"
+            },
+            "returnParameters": {
+              "id": 1995,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2336:0:13"
+            },
+            "scope": 2182,
+            "src": "2139:786:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "baseFunctions": [
+              2324
+            ],
+            "body": {
+              "id": 2104,
+              "nodeType": "Block",
+              "src": "3049:419:13",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_enum$_InsurerState_$1879",
+                          "typeString": "enum DataInsurerController.InsurerState"
+                        },
+                        "id": 2069,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "expression": {
+                            "baseExpression": {
+                              "id": 2063,
+                              "name": "insurers",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1898,
+                              "src": "3067:8:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_InsurerProfile_$1891_storage_$",
+                                "typeString": "mapping(address => struct DataInsurerController.InsurerProfile storage ref)"
+                              }
+                            },
+                            "id": 2065,
+                            "indexExpression": {
+                              "id": 2064,
+                              "name": "insurerAddress",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2054,
+                              "src": "3076:14:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "3067:24:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_InsurerProfile_$1891_storage",
+                              "typeString": "struct DataInsurerController.InsurerProfile storage ref"
+                            }
+                          },
+                          "id": 2066,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "state",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 1882,
+                          "src": "3067:30:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_InsurerState_$1879",
+                            "typeString": "enum DataInsurerController.InsurerState"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "expression": {
+                            "id": 2067,
+                            "name": "InsurerState",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1879,
+                            "src": "3101:12:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_enum$_InsurerState_$1879_$",
+                              "typeString": "type(enum DataInsurerController.InsurerState)"
+                            }
+                          },
+                          "id": 2068,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "REGISTERED",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 1877,
+                          "src": "3101:23:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_InsurerState_$1879",
+                            "typeString": "enum DataInsurerController.InsurerState"
+                          }
+                        },
+                        "src": "3067:57:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "496e7375726572206973206e6f74207965742072656769737465726564",
+                        "id": 2070,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "3126:31:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_391ea4572d5d3da3bc8b356eeb6955e0a8d434d40f2b6e999e16ab245242d346",
+                          "typeString": "literal_string \"Insurer is not yet registered\""
+                        },
+                        "value": "Insurer is not yet registered"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_391ea4572d5d3da3bc8b356eeb6955e0a8d434d40f2b6e999e16ab245242d346",
+                          "typeString": "literal_string \"Insurer is not yet registered\""
+                        }
+                      ],
+                      "id": 2062,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "3059:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 2071,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3059:99:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2072,
+                  "nodeType": "ExpressionStatement",
+                  "src": "3059:99:13"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 2077,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "expression": {
+                            "id": 2074,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4294967281,
+                            "src": "3176:3:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 2075,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "value",
+                          "nodeType": "MemberAccess",
+                          "src": "3176:9:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "id": 2076,
+                          "name": "insurerFee",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1872,
+                          "src": "3189:10:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "3176:23:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "496e76616c696420696e73757265722773206665652070616964",
+                        "id": 2078,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "3201:28:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_1fe902928d70bc62ca62bda615a7ad0c1bb83c05a42fd829d887bd1a01e3ed19",
+                          "typeString": "literal_string \"Invalid insurer's fee paid\""
+                        },
+                        "value": "Invalid insurer's fee paid"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_1fe902928d70bc62ca62bda615a7ad0c1bb83c05a42fd829d887bd1a01e3ed19",
+                          "typeString": "literal_string \"Invalid insurer's fee paid\""
+                        }
+                      ],
+                      "id": 2073,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "3168:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 2079,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3168:62:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2080,
+                  "nodeType": "ExpressionStatement",
+                  "src": "3168:62:13"
+                },
+                {
+                  "expression": {
+                    "id": 2087,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "baseExpression": {
+                          "id": 2081,
+                          "name": "insurers",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1898,
+                          "src": "3241:8:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_InsurerProfile_$1891_storage_$",
+                            "typeString": "mapping(address => struct DataInsurerController.InsurerProfile storage ref)"
+                          }
+                        },
+                        "id": 2083,
+                        "indexExpression": {
+                          "id": 2082,
+                          "name": "insurerAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2054,
+                          "src": "3250:14:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "3241:24:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_InsurerProfile_$1891_storage",
+                          "typeString": "struct DataInsurerController.InsurerProfile storage ref"
+                        }
+                      },
+                      "id": 2084,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "state",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1882,
+                      "src": "3241:30:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_InsurerState_$1879",
+                        "typeString": "enum DataInsurerController.InsurerState"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 2085,
+                        "name": "InsurerState",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1879,
+                        "src": "3274:12:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_InsurerState_$1879_$",
+                          "typeString": "type(enum DataInsurerController.InsurerState)"
+                        }
+                      },
+                      "id": 2086,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "FULLY_QUALIFIED",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1878,
+                      "src": "3274:28:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_InsurerState_$1879",
+                        "typeString": "enum DataInsurerController.InsurerState"
+                      }
+                    },
+                    "src": "3241:61:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_InsurerState_$1879",
+                      "typeString": "enum DataInsurerController.InsurerState"
+                    }
+                  },
+                  "id": 2088,
+                  "nodeType": "ExpressionStatement",
+                  "src": "3241:61:13"
+                },
+                {
+                  "expression": {
+                    "id": 2095,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "baseExpression": {
+                          "id": 2089,
+                          "name": "insurers",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1898,
+                          "src": "3312:8:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_InsurerProfile_$1891_storage_$",
+                            "typeString": "mapping(address => struct DataInsurerController.InsurerProfile storage ref)"
+                          }
+                        },
+                        "id": 2091,
+                        "indexExpression": {
+                          "id": 2090,
+                          "name": "insurerAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2054,
+                          "src": "3321:14:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "3312:24:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_InsurerProfile_$1891_storage",
+                          "typeString": "struct DataInsurerController.InsurerProfile storage ref"
+                        }
+                      },
+                      "id": 2092,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "amountPaid",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1884,
+                      "src": "3312:35:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "id": 2093,
+                        "name": "getInsurerPaidAmount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2140,
+                        "src": "3350:20:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
+                          "typeString": "function () view returns (uint256)"
+                        }
+                      },
+                      "id": 2094,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "3350:22:13",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "3312:60:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 2096,
+                  "nodeType": "ExpressionStatement",
+                  "src": "3312:60:13"
+                },
+                {
+                  "expression": {
+                    "id": 2098,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "3382:27:13",
+                    "subExpression": {
+                      "id": 2097,
+                      "name": "fullyQualifiedInsurersCtr",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1893,
+                      "src": "3382:25:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 2099,
+                  "nodeType": "ExpressionStatement",
+                  "src": "3382:27:13"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 2101,
+                        "name": "insurerAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2054,
+                        "src": "3446:14:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 2100,
+                      "name": "triggerInsurerStateChange",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2181,
+                      "src": "3420:25:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 2102,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3420:41:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2103,
+                  "nodeType": "ExpressionStatement",
+                  "src": "3420:41:13"
+                }
+              ]
+            },
+            "functionSelector": "2dc21f9c",
+            "id": 2105,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 2058,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 2057,
+                  "name": "requireIsOperational",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 2235,
+                  "src": "3004:20:13"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "3004:20:13"
+              },
+              {
+                "id": 2060,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 2059,
+                  "name": "requireAuthorizedCaller",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1395,
+                  "src": "3025:23:13"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "3025:23:13"
+              }
+            ],
+            "name": "payInsurerFee",
+            "nameLocation": "2940:13:13",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 2056,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "2995:8:13"
+            },
+            "parameters": {
+              "id": 2055,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2054,
+                  "mutability": "mutable",
+                  "name": "insurerAddress",
+                  "nameLocation": "2962:14:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2105,
+                  "src": "2954:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2053,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2954:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2953:24:13"
+            },
+            "returnParameters": {
+              "id": 2061,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3049:0:13"
+            },
+            "scope": 2182,
+            "src": "2931:537:13",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 2122,
+              "nodeType": "Block",
+              "src": "3595:150:13",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_enum$_InsurerState_$1879",
+                          "typeString": "enum DataInsurerController.InsurerState"
+                        },
+                        "id": 2117,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "expression": {
+                            "baseExpression": {
+                              "id": 2111,
+                              "name": "insurers",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1898,
+                              "src": "3613:8:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_InsurerProfile_$1891_storage_$",
+                                "typeString": "mapping(address => struct DataInsurerController.InsurerProfile storage ref)"
+                              }
+                            },
+                            "id": 2113,
+                            "indexExpression": {
+                              "id": 2112,
+                              "name": "approverInsurerAddress",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2108,
+                              "src": "3622:22:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "3613:32:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_InsurerProfile_$1891_storage",
+                              "typeString": "struct DataInsurerController.InsurerProfile storage ref"
+                            }
+                          },
+                          "id": 2114,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "state",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 1882,
+                          "src": "3613:38:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_InsurerState_$1879",
+                            "typeString": "enum DataInsurerController.InsurerState"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "expression": {
+                            "id": 2115,
+                            "name": "InsurerState",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1879,
+                            "src": "3655:12:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_enum$_InsurerState_$1879_$",
+                              "typeString": "type(enum DataInsurerController.InsurerState)"
+                            }
+                          },
+                          "id": 2116,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "FULLY_QUALIFIED",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 1878,
+                          "src": "3655:28:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_InsurerState_$1879",
+                            "typeString": "enum DataInsurerController.InsurerState"
+                          }
+                        },
+                        "src": "3613:70:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "43616c6c6572206973206e6f7420612066756c6c79207175616c696669656420696e7375726572",
+                        "id": 2118,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "3685:41:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_52fc8fe4358a14a529ea6429532979452c171055a8ef39813ab99f7e023335c6",
+                          "typeString": "literal_string \"Caller is not a fully qualified insurer\""
+                        },
+                        "value": "Caller is not a fully qualified insurer"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_52fc8fe4358a14a529ea6429532979452c171055a8ef39813ab99f7e023335c6",
+                          "typeString": "literal_string \"Caller is not a fully qualified insurer\""
+                        }
+                      ],
+                      "id": 2110,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "3605:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 2119,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3605:122:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2120,
+                  "nodeType": "ExpressionStatement",
+                  "src": "3605:122:13"
+                },
+                {
+                  "id": 2121,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "3737:1:13"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 2106,
+              "nodeType": "StructuredDocumentation",
+              "src": "3474:46:13",
+              "text": " Modifiers and private methods"
+            },
+            "id": 2123,
+            "name": "requireFullyQualifiedInsurer",
+            "nameLocation": "3535:28:13",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 2109,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2108,
+                  "mutability": "mutable",
+                  "name": "approverInsurerAddress",
+                  "nameLocation": "3572:22:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2123,
+                  "src": "3564:30:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2107,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3564:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3563:32:13"
+            },
+            "src": "3526:219:13",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 2139,
+              "nodeType": "Block",
+              "src": "3810:114:13",
+              "statements": [
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 2131,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "expression": {
+                        "id": 2128,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967281,
+                        "src": "3824:3:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 2129,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "value",
+                      "nodeType": "MemberAccess",
+                      "src": "3824:9:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": ">=",
+                    "rightExpression": {
+                      "id": 2130,
+                      "name": "insurerFee",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1872,
+                      "src": "3837:10:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "3824:23:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 2135,
+                  "nodeType": "IfStatement",
+                  "src": "3820:71:13",
+                  "trueBody": {
+                    "id": 2134,
+                    "nodeType": "Block",
+                    "src": "3849:42:13",
+                    "statements": [
+                      {
+                        "expression": {
+                          "id": 2132,
+                          "name": "insurerFee",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1872,
+                          "src": "3870:10:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "functionReturnParameters": 2127,
+                        "id": 2133,
+                        "nodeType": "Return",
+                        "src": "3863:17:13"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "expression": {
+                      "id": 2136,
+                      "name": "msg",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4294967281,
+                      "src": "3908:3:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_magic_message",
+                        "typeString": "msg"
+                      }
+                    },
+                    "id": 2137,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "value",
+                    "nodeType": "MemberAccess",
+                    "src": "3908:9:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 2127,
+                  "id": 2138,
+                  "nodeType": "Return",
+                  "src": "3901:16:13"
+                }
+              ]
+            },
+            "id": 2140,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getInsurerPaidAmount",
+            "nameLocation": "3760:20:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2124,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3780:2:13"
+            },
+            "returnParameters": {
+              "id": 2127,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2126,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2140,
+                  "src": "3805:4:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2125,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3805:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3804:6:13"
+            },
+            "scope": 2182,
+            "src": "3751:173:13",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 2163,
+              "nodeType": "Block",
+              "src": "4009:235:13",
+              "statements": [
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 2149,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 2147,
+                      "name": "fullyQualifiedInsurersCtr",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1893,
+                      "src": "4023:25:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "id": 2148,
+                      "name": "numberOfFullyQualifiedInsurersRequiredForMultiParityConsensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1875,
+                      "src": "4051:61:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "4023:89:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 2153,
+                  "nodeType": "IfStatement",
+                  "src": "4019:131:13",
+                  "trueBody": {
+                    "id": 2152,
+                    "nodeType": "Block",
+                    "src": "4114:36:13",
+                    "statements": [
+                      {
+                        "expression": {
+                          "hexValue": "74727565",
+                          "id": 2150,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "4135:4:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "true"
+                        },
+                        "functionReturnParameters": 2146,
+                        "id": 2151,
+                        "nodeType": "Return",
+                        "src": "4128:11:13"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 2161,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "commonType": {
+                        "typeIdentifier": "t_uint16",
+                        "typeString": "uint16"
+                      },
+                      "id": 2159,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "expression": {
+                          "baseExpression": {
+                            "id": 2154,
+                            "name": "insurers",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1898,
+                            "src": "4167:8:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_InsurerProfile_$1891_storage_$",
+                              "typeString": "mapping(address => struct DataInsurerController.InsurerProfile storage ref)"
+                            }
+                          },
+                          "id": 2156,
+                          "indexExpression": {
+                            "id": 2155,
+                            "name": "insurerAddress",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2142,
+                            "src": "4176:14:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "4167:24:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_InsurerProfile_$1891_storage",
+                            "typeString": "struct DataInsurerController.InsurerProfile storage ref"
+                          }
+                        },
+                        "id": 2157,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "approversCtr",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 1886,
+                        "src": "4167:37:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint16",
+                          "typeString": "uint16"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "*",
+                      "rightExpression": {
+                        "hexValue": "32",
+                        "id": 2158,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "4207:1:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_2_by_1",
+                          "typeString": "int_const 2"
+                        },
+                        "value": "2"
+                      },
+                      "src": "4167:41:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint16",
+                        "typeString": "uint16"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": ">=",
+                    "rightExpression": {
+                      "id": 2160,
+                      "name": "fullyQualifiedInsurersCtr",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1893,
+                      "src": "4212:25:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "4167:70:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 2146,
+                  "id": 2162,
+                  "nodeType": "Return",
+                  "src": "4160:77:13"
+                }
+              ]
+            },
+            "id": 2164,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isInsurerApproved",
+            "nameLocation": "3939:17:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2143,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2142,
+                  "mutability": "mutable",
+                  "name": "insurerAddress",
+                  "nameLocation": "3965:14:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2164,
+                  "src": "3957:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2141,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3957:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3956:24:13"
+            },
+            "returnParameters": {
+              "id": 2146,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2145,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2164,
+                  "src": "4003:4:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2144,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4003:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4002:6:13"
+            },
+            "scope": 2182,
+            "src": "3930:314:13",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 2180,
+              "nodeType": "Block",
+              "src": "4317:95:13",
+              "statements": [
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "id": 2170,
+                        "name": "insurerAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2166,
+                        "src": "4352:14:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "arguments": [
+                          {
+                            "expression": {
+                              "baseExpression": {
+                                "id": 2173,
+                                "name": "insurers",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1898,
+                                "src": "4373:8:13",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_mapping$_t_address_$_t_struct$_InsurerProfile_$1891_storage_$",
+                                  "typeString": "mapping(address => struct DataInsurerController.InsurerProfile storage ref)"
+                                }
+                              },
+                              "id": 2175,
+                              "indexExpression": {
+                                "id": 2174,
+                                "name": "insurerAddress",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 2166,
+                                "src": "4382:14:13",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "4373:24:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_InsurerProfile_$1891_storage",
+                                "typeString": "struct DataInsurerController.InsurerProfile storage ref"
+                              }
+                            },
+                            "id": 2176,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "state",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 1882,
+                            "src": "4373:30:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_InsurerState_$1879",
+                              "typeString": "enum DataInsurerController.InsurerState"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_InsurerState_$1879",
+                              "typeString": "enum DataInsurerController.InsurerState"
+                            }
+                          ],
+                          "id": 2172,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "4368:4:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": {
+                            "id": 2171,
+                            "name": "uint",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "4368:4:13",
+                            "typeDescriptions": {}
+                          }
+                        },
+                        "id": 2177,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "4368:36:13",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 2169,
+                      "name": "InsurerStateChanged",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1905,
+                      "src": "4332:19:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256)"
+                      }
+                    },
+                    "id": 2178,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "4332:73:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2179,
+                  "nodeType": "EmitStatement",
+                  "src": "4327:78:13"
+                }
+              ]
+            },
+            "id": 2181,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "triggerInsurerStateChange",
+            "nameLocation": "4259:25:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2167,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2166,
+                  "mutability": "mutable",
+                  "name": "insurerAddress",
+                  "nameLocation": "4293:14:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2181,
+                  "src": "4285:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2165,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4285:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4284:24:13"
+            },
+            "returnParameters": {
+              "id": 2168,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4317:0:13"
+            },
+            "scope": 2182,
+            "src": "4250:162:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "private"
+          }
+        ],
+        "scope": 2183,
+        "src": "214:4201:13",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:4384:13"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-06-11T12:15:55.619Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "events": {
+      "FundingReceived(address,uint256)": {
+        "notice": "API"
+      },
+      "InsurerStateChanged(address,uint256)": {
+        "notice": "API"
+      }
+    },
+    "kind": "user",
+    "methods": {
+      "isContractOperational()": {
+        "notice": "API"
+      }
+    },
+    "version": 1
+  }
+}

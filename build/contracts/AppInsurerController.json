@@ -1,0 +1,1707 @@
+{
+  "contractName": "AppInsurerController",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "airlineAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "airlineName",
+          "type": "string"
+        }
+      ],
+      "name": "registerTheFirstAirline",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "airlineAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "airlineName",
+          "type": "string"
+        }
+      ],
+      "name": "registerAirline",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "payAirlineInsurerFee",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"payAirlineInsurerFee\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"airlineAddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"airlineName\",\"type\":\"string\"}],\"name\":\"registerAirline\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"airlineAddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"airlineName\",\"type\":\"string\"}],\"name\":\"registerTheFirstAirline\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"registerTheFirstAirline(address,string)\":{\"notice\":\"API\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/app/AppInsurerController.sol\":\"AppInsurerController\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/app/AppInsurerController.sol\":{\"keccak256\":\"0x34dfddd48183f1a6c4e5d18f2b150d327f523dd4dced29519690985eda26a9cb\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5890df3e6115bc7c8bb7b6ebb64eeb2d8ea6a27b14d6dbfeed6337263957c2bf\",\"dweb:/ipfs/QmbvfmYmeo7m6AXtHSeVh4iy4Sc3MrtBhusADba1UcXKsy\"]},\"project:/contracts/app/base/BaseAppContract.sol\":{\"keccak256\":\"0xedf320cdd0580e92ad8449ba238fcf34bac91afa041e1d7cbfba6d48dbaab422\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a89d30666ac6ffe099f310d2187875788fe5831dedef80713b83fe277621e473\",\"dweb:/ipfs/Qmdah1Hm1ffVjjafE9zLDNvonHR9u7HfTAxBjNG6x14xMu\"]},\"project:/contracts/app/base/BaseAppInsurerController.sol\":{\"keccak256\":\"0x09563452d22e6ac37e97013ef9fbbea7450fbfed43191d9b9a089708dda71519\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://01a9ad5a1c3d9d9c8317c6344991445223f72382ae22c2dc45ae3661bbdc4904\",\"dweb:/ipfs/QmaHAiH96pDBHMx8et7mVVPKqdQXqAKwcdftYYhxn2fHPa\"]},\"project:/contracts/data/base/BaseDataContract.sol\":{\"keccak256\":\"0x5b1722dbe70c87957e3938477ff976ca9562ff4263be62e91ef978da51b5da78\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f5eb2452f4a9d433bcb8dd9fa3a3ed3aaceed103feedf7522eecdbf187ad5e9f\",\"dweb:/ipfs/QmZMnTwHhTm5f2JR29BPpemqV4XDq7L4RA7yYNm8hqPDGn\"]},\"project:/contracts/data/base/BaseDataInsuranceController.sol\":{\"keccak256\":\"0x372a43608a9f76ebc29eded1e92d6f8cc3b47ca0c7be3ad2bfaf82ad85370ce4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a2405527f67a1d089998032371e769357a76d25e5f1d2b31ad05971edc1e926d\",\"dweb:/ipfs/QmYMJKF9xjk2NWk4EaNt6D2Dqz3Z91oM6m7CJVHQKuLqNh\"]},\"project:/contracts/data/base/BaseDataInsurerController.sol\":{\"keccak256\":\"0xfc7283989185c16c99ecb17f23bf5687d5808d408c682abcabd508e91fb59fed\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b1b17fd611c59125bd1390f6e24ff49e080fc2893f80eb4b68f7f6b807ded1f8\",\"dweb:/ipfs/QmW5tq66BqMWzrwNqD15zu5VGHNvgR1Tub7UtCtaDtxsWx\"]},\"project:/contracts/shared/BaseOperationalContract.sol\":{\"keccak256\":\"0x3518e25104d3dce8f60d8d2558aa412222d5667b5732b0ce607401cae6eaa53a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1b17eb8025748c4e8689508974695ff3771937130a4de3bedeb2f3a1235be6b8\",\"dweb:/ipfs/QmXff87UaNbtCRoowc4gfZKiJu2Mef6d7VAMK5fZLxUzAw\"]},\"project:/contracts/shared/BaseSuretyData.sol\":{\"keccak256\":\"0xd9aced2d1179a2ec4382de9d65ef9f416f18474cc4be913e25852371dcf33e37\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e54948b75da3ca72350bc35db305bb6bcee4e8a91e63d84823486128e70e4480\",\"dweb:/ipfs/QmSapdMpk2MmAysUPaHAT1q6MMUd4bhAT69eRJzfVZKH1d\"]},\"project:/contracts/shared/OwnableContract.sol\":{\"keccak256\":\"0x5a06d6de5664f8b7db1caff84cd462c5a3d2bf02836174ea7b790bceef734162\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://359df35a435590291db9d96c450fc992cc7bc17a37bf1aa1c53e8480b38d51db\",\"dweb:/ipfs/QmVohWGS7mVTewqvEaksGb6LXdtR2TDJEjYKf1VeRu5sof\"]},\"project:/contracts/shared/PayableContract.sol\":{\"keccak256\":\"0xef48e65cf9cec25b2bacc2075549c6075bd299c53b43e13a0b8c7b753f4f3cdf\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2124c3fb367ee14110b7b2f05207b6e1d1fd6b51d0001687e545413a9584527d\",\"dweb:/ipfs/QmWWKnNoW7cvbmm8x6DUuPCXRVq43TGzZMy3Gt63dtZKu1\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\nimport \"./base/BaseAppInsurerController.sol\";\nimport \"./base/BaseAppContract.sol\";\nimport \"../shared/OwnableContract.sol\";\nimport \"../shared/PayableContract.sol\";\n\nabstract contract AppInsurerController is BaseAppInsurerController, BaseAppContract, OwnableContract, PayableContract {\n\n    struct Airline {\n        bool isRegistered;\n        string name;\n    }\n\n    // key => address\n    mapping(address => Airline) internal airlines;\n\n    /**\n    * API\n    */\n\n    function registerTheFirstAirline(address airlineAddress, string memory airlineName) external requireContractOwner {\n        require(!airlines[airlineAddress].isRegistered, \"Airline cannot be registered twice\");\n\n        airlines[airlineAddress].name = airlineName;\n        airlines[airlineAddress].isRegistered = true;\n\n        suretyDataContract.registerTheFirstInsurer(airlineAddress);\n    }\n\n    function registerAirline(address airlineAddress, string memory airlineName) external requireIsOperational {\n        airlines[airlineAddress].name = airlineName;\n        airlines[airlineAddress].isRegistered = true;\n\n        suretyDataContract.registerInsurer(msg.sender, airlineAddress);\n    }\n\n    function payAirlineInsurerFee() external payable requireIsOperational {\n        requireRegisteredAirline(msg.sender, \"Only registered airline can pay insurer fee\");\n        suretyDataContract.payInsurerFee{value : msg.value}(msg.sender);\n    }\n\n    /**\n    * Modifiers and private methods\n    */\n\n    function requireRegisteredAirline(address airlineAddress, string memory errorMsg) view internal override {\n        require(airlines[airlineAddress].isRegistered, errorMsg);\n    }\n\n}\n",
+  "sourcePath": "/Volumes/Others/blockchain/udacity/flight-udacity-dapp/contracts/app/AppInsurerController.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/app/AppInsurerController.sol",
+    "exportedSymbols": {
+      "AppInsurerController": [
+        606
+      ],
+      "BaseAppContract": [
+        1245
+      ],
+      "BaseAppInsurerController": [
+        1284
+      ],
+      "BaseDataContract": [
+        2249
+      ],
+      "BaseDataInsuranceController": [
+        2288
+      ],
+      "BaseDataInsurerController": [
+        2325
+      ],
+      "BaseOperationalContract": [
+        2339
+      ],
+      "BaseSuretyData": [
+        2354
+      ],
+      "OwnableContract": [
+        2380
+      ],
+      "PayableContract": [
+        2424
+      ]
+    },
+    "id": 607,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 471,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".5"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:5"
+      },
+      {
+        "absolutePath": "project:/contracts/app/base/BaseAppInsurerController.sol",
+        "file": "./base/BaseAppInsurerController.sol",
+        "id": 472,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 607,
+        "sourceUnit": 1285,
+        "src": "57:45:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/app/base/BaseAppContract.sol",
+        "file": "./base/BaseAppContract.sol",
+        "id": 473,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 607,
+        "sourceUnit": 1246,
+        "src": "103:36:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/shared/OwnableContract.sol",
+        "file": "../shared/OwnableContract.sol",
+        "id": 474,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 607,
+        "sourceUnit": 2381,
+        "src": "140:39:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/shared/PayableContract.sol",
+        "file": "../shared/PayableContract.sol",
+        "id": 475,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 607,
+        "sourceUnit": 2425,
+        "src": "180:39:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 476,
+              "name": "BaseAppInsurerController",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 1284,
+              "src": "263:24:5"
+            },
+            "id": 477,
+            "nodeType": "InheritanceSpecifier",
+            "src": "263:24:5"
+          },
+          {
+            "baseName": {
+              "id": 478,
+              "name": "BaseAppContract",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 1245,
+              "src": "289:15:5"
+            },
+            "id": 479,
+            "nodeType": "InheritanceSpecifier",
+            "src": "289:15:5"
+          },
+          {
+            "baseName": {
+              "id": 480,
+              "name": "OwnableContract",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 2380,
+              "src": "306:15:5"
+            },
+            "id": 481,
+            "nodeType": "InheritanceSpecifier",
+            "src": "306:15:5"
+          },
+          {
+            "baseName": {
+              "id": 482,
+              "name": "PayableContract",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 2424,
+              "src": "323:15:5"
+            },
+            "id": 483,
+            "nodeType": "InheritanceSpecifier",
+            "src": "323:15:5"
+          }
+        ],
+        "canonicalName": "AppInsurerController",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 606,
+        "linearizedBaseContracts": [
+          606,
+          2424,
+          2380,
+          1245,
+          1284
+        ],
+        "name": "AppInsurerController",
+        "nameLocation": "239:20:5",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "AppInsurerController.Airline",
+            "id": 488,
+            "members": [
+              {
+                "constant": false,
+                "id": 485,
+                "mutability": "mutable",
+                "name": "isRegistered",
+                "nameLocation": "376:12:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 488,
+                "src": "371:17:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 484,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "371:4:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 487,
+                "mutability": "mutable",
+                "name": "name",
+                "nameLocation": "405:4:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 488,
+                "src": "398:11:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 486,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "398:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Airline",
+            "nameLocation": "353:7:5",
+            "nodeType": "StructDefinition",
+            "scope": 606,
+            "src": "346:70:5",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 493,
+            "mutability": "mutable",
+            "name": "airlines",
+            "nameLocation": "481:8:5",
+            "nodeType": "VariableDeclaration",
+            "scope": 606,
+            "src": "444:45:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Airline_$488_storage_$",
+              "typeString": "mapping(address => struct AppInsurerController.Airline)"
+            },
+            "typeName": {
+              "id": 492,
+              "keyType": {
+                "id": 489,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "452:7:5",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "444:27:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Airline_$488_storage_$",
+                "typeString": "mapping(address => struct AppInsurerController.Airline)"
+              },
+              "valueType": {
+                "id": 491,
+                "nodeType": "UserDefinedTypeName",
+                "pathNode": {
+                  "id": 490,
+                  "name": "Airline",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 488,
+                  "src": "463:7:5"
+                },
+                "referencedDeclaration": 488,
+                "src": "463:7:5",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Airline_$488_storage_ptr",
+                  "typeString": "struct AppInsurerController.Airline"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 532,
+              "nodeType": "Block",
+              "src": "636:279:5",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 508,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "!",
+                        "prefix": true,
+                        "src": "654:38:5",
+                        "subExpression": {
+                          "expression": {
+                            "baseExpression": {
+                              "id": 504,
+                              "name": "airlines",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 493,
+                              "src": "655:8:5",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Airline_$488_storage_$",
+                                "typeString": "mapping(address => struct AppInsurerController.Airline storage ref)"
+                              }
+                            },
+                            "id": 506,
+                            "indexExpression": {
+                              "id": 505,
+                              "name": "airlineAddress",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 496,
+                              "src": "664:14:5",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "655:24:5",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Airline_$488_storage",
+                              "typeString": "struct AppInsurerController.Airline storage ref"
+                            }
+                          },
+                          "id": 507,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "isRegistered",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 485,
+                          "src": "655:37:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "4169726c696e652063616e6e6f742062652072656769737465726564207477696365",
+                        "id": 509,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "694:36:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_335cf7aca05c7e9cd11c983fde4c965e668f34970ec96437e16ca3f9ae61cd8d",
+                          "typeString": "literal_string \"Airline cannot be registered twice\""
+                        },
+                        "value": "Airline cannot be registered twice"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_335cf7aca05c7e9cd11c983fde4c965e668f34970ec96437e16ca3f9ae61cd8d",
+                          "typeString": "literal_string \"Airline cannot be registered twice\""
+                        }
+                      ],
+                      "id": 503,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "646:7:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 510,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "646:85:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 511,
+                  "nodeType": "ExpressionStatement",
+                  "src": "646:85:5"
+                },
+                {
+                  "expression": {
+                    "id": 517,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "baseExpression": {
+                          "id": 512,
+                          "name": "airlines",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 493,
+                          "src": "742:8:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Airline_$488_storage_$",
+                            "typeString": "mapping(address => struct AppInsurerController.Airline storage ref)"
+                          }
+                        },
+                        "id": 514,
+                        "indexExpression": {
+                          "id": 513,
+                          "name": "airlineAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 496,
+                          "src": "751:14:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "742:24:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Airline_$488_storage",
+                          "typeString": "struct AppInsurerController.Airline storage ref"
+                        }
+                      },
+                      "id": 515,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "name",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 487,
+                      "src": "742:29:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 516,
+                      "name": "airlineName",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 498,
+                      "src": "774:11:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "742:43:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 518,
+                  "nodeType": "ExpressionStatement",
+                  "src": "742:43:5"
+                },
+                {
+                  "expression": {
+                    "id": 524,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "baseExpression": {
+                          "id": 519,
+                          "name": "airlines",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 493,
+                          "src": "795:8:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Airline_$488_storage_$",
+                            "typeString": "mapping(address => struct AppInsurerController.Airline storage ref)"
+                          }
+                        },
+                        "id": 521,
+                        "indexExpression": {
+                          "id": 520,
+                          "name": "airlineAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 496,
+                          "src": "804:14:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "795:24:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Airline_$488_storage",
+                          "typeString": "struct AppInsurerController.Airline storage ref"
+                        }
+                      },
+                      "id": 522,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "isRegistered",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 485,
+                      "src": "795:37:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "hexValue": "74727565",
+                      "id": 523,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "835:4:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "795:44:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 525,
+                  "nodeType": "ExpressionStatement",
+                  "src": "795:44:5"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 529,
+                        "name": "airlineAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 496,
+                        "src": "893:14:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "id": 526,
+                        "name": "suretyDataContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1232,
+                        "src": "850:18:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_BaseSuretyData_$2354",
+                          "typeString": "contract BaseSuretyData"
+                        }
+                      },
+                      "id": 528,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "registerTheFirstInsurer",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2312,
+                      "src": "850:42:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address) external"
+                      }
+                    },
+                    "id": 530,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "850:58:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 531,
+                  "nodeType": "ExpressionStatement",
+                  "src": "850:58:5"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 494,
+              "nodeType": "StructuredDocumentation",
+              "src": "496:20:5",
+              "text": " API"
+            },
+            "functionSelector": "b6d4a83a",
+            "id": 533,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 501,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 500,
+                  "name": "requireContractOwner",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 2379,
+                  "src": "615:20:5"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "615:20:5"
+              }
+            ],
+            "name": "registerTheFirstAirline",
+            "nameLocation": "531:23:5",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 499,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 496,
+                  "mutability": "mutable",
+                  "name": "airlineAddress",
+                  "nameLocation": "563:14:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 533,
+                  "src": "555:22:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 495,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "555:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 498,
+                  "mutability": "mutable",
+                  "name": "airlineName",
+                  "nameLocation": "593:11:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 533,
+                  "src": "579:25:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 497,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "579:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "554:51:5"
+            },
+            "returnParameters": {
+              "id": 502,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "636:0:5"
+            },
+            "scope": 606,
+            "src": "522:393:5",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 564,
+              "nodeType": "Block",
+              "src": "1027:187:5",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 547,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "baseExpression": {
+                          "id": 542,
+                          "name": "airlines",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 493,
+                          "src": "1037:8:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Airline_$488_storage_$",
+                            "typeString": "mapping(address => struct AppInsurerController.Airline storage ref)"
+                          }
+                        },
+                        "id": 544,
+                        "indexExpression": {
+                          "id": 543,
+                          "name": "airlineAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 535,
+                          "src": "1046:14:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1037:24:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Airline_$488_storage",
+                          "typeString": "struct AppInsurerController.Airline storage ref"
+                        }
+                      },
+                      "id": 545,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "name",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 487,
+                      "src": "1037:29:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 546,
+                      "name": "airlineName",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 537,
+                      "src": "1069:11:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "1037:43:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 548,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1037:43:5"
+                },
+                {
+                  "expression": {
+                    "id": 554,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "baseExpression": {
+                          "id": 549,
+                          "name": "airlines",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 493,
+                          "src": "1090:8:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Airline_$488_storage_$",
+                            "typeString": "mapping(address => struct AppInsurerController.Airline storage ref)"
+                          }
+                        },
+                        "id": 551,
+                        "indexExpression": {
+                          "id": 550,
+                          "name": "airlineAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 535,
+                          "src": "1099:14:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1090:24:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Airline_$488_storage",
+                          "typeString": "struct AppInsurerController.Airline storage ref"
+                        }
+                      },
+                      "id": 552,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "isRegistered",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 485,
+                      "src": "1090:37:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "hexValue": "74727565",
+                      "id": 553,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1130:4:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "1090:44:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 555,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1090:44:5"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 559,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4294967281,
+                          "src": "1180:3:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 560,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "src": "1180:10:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 561,
+                        "name": "airlineAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 535,
+                        "src": "1192:14:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "id": 556,
+                        "name": "suretyDataContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1232,
+                        "src": "1145:18:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_BaseSuretyData_$2354",
+                          "typeString": "contract BaseSuretyData"
+                        }
+                      },
+                      "id": 558,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "registerInsurer",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2319,
+                      "src": "1145:34:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address) external"
+                      }
+                    },
+                    "id": 562,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1145:62:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 563,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1145:62:5"
+                }
+              ]
+            },
+            "functionSelector": "ee38a749",
+            "id": 565,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 540,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 539,
+                  "name": "requireIsOperational",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1244,
+                  "src": "1006:20:5"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1006:20:5"
+              }
+            ],
+            "name": "registerAirline",
+            "nameLocation": "930:15:5",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 538,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 535,
+                  "mutability": "mutable",
+                  "name": "airlineAddress",
+                  "nameLocation": "954:14:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 565,
+                  "src": "946:22:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 534,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "946:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 537,
+                  "mutability": "mutable",
+                  "name": "airlineName",
+                  "nameLocation": "984:11:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 565,
+                  "src": "970:25:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 536,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "970:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "945:51:5"
+            },
+            "returnParameters": {
+              "id": 541,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1027:0:5"
+            },
+            "scope": 606,
+            "src": "921:293:5",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 586,
+              "nodeType": "Block",
+              "src": "1290:173:5",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 571,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4294967281,
+                          "src": "1325:3:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 572,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "src": "1325:10:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "hexValue": "4f6e6c792072656769737465726564206169726c696e652063616e2070617920696e737572657220666565",
+                        "id": 573,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1337:45:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_92453ad04b0196f6132c32a36af61a8af4427e97f04f70a440658cb91e398626",
+                          "typeString": "literal_string \"Only registered airline can pay insurer fee\""
+                        },
+                        "value": "Only registered airline can pay insurer fee"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_92453ad04b0196f6132c32a36af61a8af4427e97f04f70a440658cb91e398626",
+                          "typeString": "literal_string \"Only registered airline can pay insurer fee\""
+                        }
+                      ],
+                      "id": 570,
+                      "name": "requireRegisteredAirline",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        605
+                      ],
+                      "referencedDeclaration": 605,
+                      "src": "1300:24:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_address_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (address,string memory) view"
+                      }
+                    },
+                    "id": 574,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1300:83:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 575,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1300:83:5"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 582,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4294967281,
+                          "src": "1445:3:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 583,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "src": "1445:10:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "expression": {
+                          "id": 576,
+                          "name": "suretyDataContract",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1232,
+                          "src": "1393:18:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_BaseSuretyData_$2354",
+                            "typeString": "contract BaseSuretyData"
+                          }
+                        },
+                        "id": 578,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "payInsurerFee",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 2324,
+                        "src": "1393:32:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_external_payable$_t_address_$returns$__$",
+                          "typeString": "function (address) payable external"
+                        }
+                      },
+                      "id": 581,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "names": [
+                        "value"
+                      ],
+                      "nodeType": "FunctionCallOptions",
+                      "options": [
+                        {
+                          "expression": {
+                            "id": 579,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4294967281,
+                            "src": "1434:3:5",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 580,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "value",
+                          "nodeType": "MemberAccess",
+                          "src": "1434:9:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "src": "1393:51:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_payable$_t_address_$returns$__$value",
+                        "typeString": "function (address) payable external"
+                      }
+                    },
+                    "id": 584,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1393:63:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 585,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1393:63:5"
+                }
+              ]
+            },
+            "functionSelector": "110169c3",
+            "id": 587,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 568,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 567,
+                  "name": "requireIsOperational",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1244,
+                  "src": "1269:20:5"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1269:20:5"
+              }
+            ],
+            "name": "payAirlineInsurerFee",
+            "nameLocation": "1229:20:5",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 566,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1249:2:5"
+            },
+            "returnParameters": {
+              "id": 569,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1290:0:5"
+            },
+            "scope": 606,
+            "src": "1220:243:5",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "baseFunctions": [
+              1283
+            ],
+            "body": {
+              "id": 604,
+              "nodeType": "Block",
+              "src": "1626:73:5",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "baseExpression": {
+                            "id": 597,
+                            "name": "airlines",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 493,
+                            "src": "1644:8:5",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Airline_$488_storage_$",
+                              "typeString": "mapping(address => struct AppInsurerController.Airline storage ref)"
+                            }
+                          },
+                          "id": 599,
+                          "indexExpression": {
+                            "id": 598,
+                            "name": "airlineAddress",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 590,
+                            "src": "1653:14:5",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "1644:24:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Airline_$488_storage",
+                            "typeString": "struct AppInsurerController.Airline storage ref"
+                          }
+                        },
+                        "id": 600,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "isRegistered",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 485,
+                        "src": "1644:37:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "id": 601,
+                        "name": "errorMsg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 592,
+                        "src": "1683:8:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 596,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "1636:7:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 602,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1636:56:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 603,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1636:56:5"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 588,
+              "nodeType": "StructuredDocumentation",
+              "src": "1469:46:5",
+              "text": " Modifiers and private methods"
+            },
+            "id": 605,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "requireRegisteredAirline",
+            "nameLocation": "1530:24:5",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 594,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1617:8:5"
+            },
+            "parameters": {
+              "id": 593,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 590,
+                  "mutability": "mutable",
+                  "name": "airlineAddress",
+                  "nameLocation": "1563:14:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 605,
+                  "src": "1555:22:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 589,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1555:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 592,
+                  "mutability": "mutable",
+                  "name": "errorMsg",
+                  "nameLocation": "1593:8:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 605,
+                  "src": "1579:22:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 591,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1579:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1554:48:5"
+            },
+            "returnParameters": {
+              "id": 595,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1626:0:5"
+            },
+            "scope": 606,
+            "src": "1521:178:5",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 607,
+        "src": "221:1481:5",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:1671:5"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-06-11T12:15:55.542Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "registerTheFirstAirline(address,string)": {
+        "notice": "API"
+      }
+    },
+    "version": 1
+  }
+}

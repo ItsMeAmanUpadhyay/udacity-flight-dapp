@@ -1,0 +1,583 @@
+{
+  "contractName": "BaseDataInsuranceController",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_minInsurancePrice",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_maxInsurancePrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "setInsuranceConfigParams",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "insuredObjectKey",
+          "type": "bytes32"
+        }
+      ],
+      "name": "registerInsuredObject",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "insureeAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "insuredObjectKey",
+          "type": "bytes32"
+        }
+      ],
+      "name": "buyInsurance",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "insuredObjectKey",
+          "type": "bytes32"
+        }
+      ],
+      "name": "closeAllInsurances",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "insuredObjectKey",
+          "type": "bytes32"
+        }
+      ],
+      "name": "approveAllInsuranceCreditWithdraws",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "insureeAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "insuredObjectKey",
+          "type": "bytes32"
+        }
+      ],
+      "name": "withdrawInsuranceCredit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"insuredObjectKey\",\"type\":\"bytes32\"}],\"name\":\"approveAllInsuranceCreditWithdraws\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"insureeAddress\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"insuredObjectKey\",\"type\":\"bytes32\"}],\"name\":\"buyInsurance\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"insuredObjectKey\",\"type\":\"bytes32\"}],\"name\":\"closeAllInsurances\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"insuredObjectKey\",\"type\":\"bytes32\"}],\"name\":\"registerInsuredObject\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_minInsurancePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxInsurancePrice\",\"type\":\"uint256\"}],\"name\":\"setInsuranceConfigParams\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"insureeAddress\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"insuredObjectKey\",\"type\":\"bytes32\"}],\"name\":\"withdrawInsuranceCredit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/data/base/BaseDataInsuranceController.sol\":\"BaseDataInsuranceController\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/data/base/BaseDataInsuranceController.sol\":{\"keccak256\":\"0x372a43608a9f76ebc29eded1e92d6f8cc3b47ca0c7be3ad2bfaf82ad85370ce4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a2405527f67a1d089998032371e769357a76d25e5f1d2b31ad05971edc1e926d\",\"dweb:/ipfs/QmYMJKF9xjk2NWk4EaNt6D2Dqz3Z91oM6m7CJVHQKuLqNh\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\ninterface BaseDataInsuranceController {\n    function setInsuranceConfigParams(uint _minInsurancePrice, uint _maxInsurancePrice) external;\n\n    function registerInsuredObject(bytes32 insuredObjectKey) external;\n\n    function buyInsurance(address insureeAddress, bytes32 insuredObjectKey) external payable;\n\n    function closeAllInsurances(bytes32 insuredObjectKey) external;\n\n    function approveAllInsuranceCreditWithdraws(bytes32 insuredObjectKey) external;\n\n    function withdrawInsuranceCredit(address insureeAddress, bytes32 insuredObjectKey) external;\n}\n",
+  "sourcePath": "/Volumes/Others/blockchain/udacity/flight-udacity-dapp/contracts/data/base/BaseDataInsuranceController.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/data/base/BaseDataInsuranceController.sol",
+    "exportedSymbols": {
+      "BaseDataInsuranceController": [
+        2288
+      ]
+    },
+    "id": 2289,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2251,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".5"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:16"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "BaseDataInsuranceController",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 2288,
+        "linearizedBaseContracts": [
+          2288
+        ],
+        "name": "BaseDataInsuranceController",
+        "nameLocation": "67:27:16",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "f6ece3c4",
+            "id": 2258,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setInsuranceConfigParams",
+            "nameLocation": "110:24:16",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2256,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2253,
+                  "mutability": "mutable",
+                  "name": "_minInsurancePrice",
+                  "nameLocation": "140:18:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2258,
+                  "src": "135:23:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2252,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "135:4:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2255,
+                  "mutability": "mutable",
+                  "name": "_maxInsurancePrice",
+                  "nameLocation": "165:18:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2258,
+                  "src": "160:23:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2254,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "160:4:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "134:50:16"
+            },
+            "returnParameters": {
+              "id": 2257,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "193:0:16"
+            },
+            "scope": 2288,
+            "src": "101:93:16",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "1d5f1bc7",
+            "id": 2263,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "registerInsuredObject",
+            "nameLocation": "209:21:16",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2261,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2260,
+                  "mutability": "mutable",
+                  "name": "insuredObjectKey",
+                  "nameLocation": "239:16:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2263,
+                  "src": "231:24:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2259,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "231:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "230:26:16"
+            },
+            "returnParameters": {
+              "id": 2262,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "265:0:16"
+            },
+            "scope": 2288,
+            "src": "200:66:16",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "adf8ae7a",
+            "id": 2270,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "buyInsurance",
+            "nameLocation": "281:12:16",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2268,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2265,
+                  "mutability": "mutable",
+                  "name": "insureeAddress",
+                  "nameLocation": "302:14:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2270,
+                  "src": "294:22:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2264,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "294:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2267,
+                  "mutability": "mutable",
+                  "name": "insuredObjectKey",
+                  "nameLocation": "326:16:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2270,
+                  "src": "318:24:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2266,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "318:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "293:50:16"
+            },
+            "returnParameters": {
+              "id": 2269,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "360:0:16"
+            },
+            "scope": 2288,
+            "src": "272:89:16",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "44e74e99",
+            "id": 2275,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "closeAllInsurances",
+            "nameLocation": "376:18:16",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2273,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2272,
+                  "mutability": "mutable",
+                  "name": "insuredObjectKey",
+                  "nameLocation": "403:16:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2275,
+                  "src": "395:24:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2271,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "395:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "394:26:16"
+            },
+            "returnParameters": {
+              "id": 2274,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "429:0:16"
+            },
+            "scope": 2288,
+            "src": "367:63:16",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "baf2a018",
+            "id": 2280,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "approveAllInsuranceCreditWithdraws",
+            "nameLocation": "445:34:16",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2278,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2277,
+                  "mutability": "mutable",
+                  "name": "insuredObjectKey",
+                  "nameLocation": "488:16:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2280,
+                  "src": "480:24:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2276,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "480:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "479:26:16"
+            },
+            "returnParameters": {
+              "id": 2279,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "514:0:16"
+            },
+            "scope": 2288,
+            "src": "436:79:16",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "d3ce2108",
+            "id": 2287,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "withdrawInsuranceCredit",
+            "nameLocation": "530:23:16",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2285,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2282,
+                  "mutability": "mutable",
+                  "name": "insureeAddress",
+                  "nameLocation": "562:14:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2287,
+                  "src": "554:22:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2281,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "554:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2284,
+                  "mutability": "mutable",
+                  "name": "insuredObjectKey",
+                  "nameLocation": "586:16:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2287,
+                  "src": "578:24:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2283,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "578:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "553:50:16"
+            },
+            "returnParameters": {
+              "id": 2286,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "612:0:16"
+            },
+            "scope": 2288,
+            "src": "521:92:16",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2289,
+        "src": "57:558:16",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:584:16"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-06-11T12:15:55.809Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

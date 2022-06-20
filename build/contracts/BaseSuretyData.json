@@ -1,0 +1,423 @@
+{
+  "contractName": "BaseSuretyData",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "insuredObjectKey",
+          "type": "bytes32"
+        }
+      ],
+      "name": "approveAllInsuranceCreditWithdraws",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dataContract",
+          "type": "address"
+        }
+      ],
+      "name": "authorizeContractCaller",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "insureeAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "insuredObjectKey",
+          "type": "bytes32"
+        }
+      ],
+      "name": "buyInsurance",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "insuredObjectKey",
+          "type": "bytes32"
+        }
+      ],
+      "name": "closeAllInsurances",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dataContract",
+          "type": "address"
+        }
+      ],
+      "name": "deauthorizeContractCaller",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getInsurerFee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getNumberOfFullyQualifiedInsurersRequiredForMultiParityConsensus",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "isContractOperational",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pauseContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "insurerAddress",
+          "type": "address"
+        }
+      ],
+      "name": "payInsurerFee",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "insuredObjectKey",
+          "type": "bytes32"
+        }
+      ],
+      "name": "registerInsuredObject",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "approverInsurerAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "insurerAddress",
+          "type": "address"
+        }
+      ],
+      "name": "registerInsurer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "insurerAddress",
+          "type": "address"
+        }
+      ],
+      "name": "registerTheFirstInsurer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "resumeContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_minInsurancePrice",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_maxInsurancePrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "setInsuranceConfigParams",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_insurerFee",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_numberOfFullyQualifiedInsurersRequiredForMultiParityConsensus",
+          "type": "uint256"
+        }
+      ],
+      "name": "setInsurerConfigParams",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "insureeAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "insuredObjectKey",
+          "type": "bytes32"
+        }
+      ],
+      "name": "withdrawInsuranceCredit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"insuredObjectKey\",\"type\":\"bytes32\"}],\"name\":\"approveAllInsuranceCreditWithdraws\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dataContract\",\"type\":\"address\"}],\"name\":\"authorizeContractCaller\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"insureeAddress\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"insuredObjectKey\",\"type\":\"bytes32\"}],\"name\":\"buyInsurance\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"insuredObjectKey\",\"type\":\"bytes32\"}],\"name\":\"closeAllInsurances\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dataContract\",\"type\":\"address\"}],\"name\":\"deauthorizeContractCaller\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getInsurerFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getNumberOfFullyQualifiedInsurersRequiredForMultiParityConsensus\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"isContractOperational\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pauseContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"insurerAddress\",\"type\":\"address\"}],\"name\":\"payInsurerFee\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"insuredObjectKey\",\"type\":\"bytes32\"}],\"name\":\"registerInsuredObject\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"approverInsurerAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"insurerAddress\",\"type\":\"address\"}],\"name\":\"registerInsurer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"insurerAddress\",\"type\":\"address\"}],\"name\":\"registerTheFirstInsurer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"resumeContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_minInsurancePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxInsurancePrice\",\"type\":\"uint256\"}],\"name\":\"setInsuranceConfigParams\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_insurerFee\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_numberOfFullyQualifiedInsurersRequiredForMultiParityConsensus\",\"type\":\"uint256\"}],\"name\":\"setInsurerConfigParams\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"insureeAddress\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"insuredObjectKey\",\"type\":\"bytes32\"}],\"name\":\"withdrawInsuranceCredit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/shared/BaseSuretyData.sol\":\"BaseSuretyData\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/data/base/BaseDataContract.sol\":{\"keccak256\":\"0x5b1722dbe70c87957e3938477ff976ca9562ff4263be62e91ef978da51b5da78\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f5eb2452f4a9d433bcb8dd9fa3a3ed3aaceed103feedf7522eecdbf187ad5e9f\",\"dweb:/ipfs/QmZMnTwHhTm5f2JR29BPpemqV4XDq7L4RA7yYNm8hqPDGn\"]},\"project:/contracts/data/base/BaseDataInsuranceController.sol\":{\"keccak256\":\"0x372a43608a9f76ebc29eded1e92d6f8cc3b47ca0c7be3ad2bfaf82ad85370ce4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a2405527f67a1d089998032371e769357a76d25e5f1d2b31ad05971edc1e926d\",\"dweb:/ipfs/QmYMJKF9xjk2NWk4EaNt6D2Dqz3Z91oM6m7CJVHQKuLqNh\"]},\"project:/contracts/data/base/BaseDataInsurerController.sol\":{\"keccak256\":\"0xfc7283989185c16c99ecb17f23bf5687d5808d408c682abcabd508e91fb59fed\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b1b17fd611c59125bd1390f6e24ff49e080fc2893f80eb4b68f7f6b807ded1f8\",\"dweb:/ipfs/QmW5tq66BqMWzrwNqD15zu5VGHNvgR1Tub7UtCtaDtxsWx\"]},\"project:/contracts/shared/BaseOperationalContract.sol\":{\"keccak256\":\"0x3518e25104d3dce8f60d8d2558aa412222d5667b5732b0ce607401cae6eaa53a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1b17eb8025748c4e8689508974695ff3771937130a4de3bedeb2f3a1235be6b8\",\"dweb:/ipfs/QmXff87UaNbtCRoowc4gfZKiJu2Mef6d7VAMK5fZLxUzAw\"]},\"project:/contracts/shared/BaseSuretyData.sol\":{\"keccak256\":\"0xd9aced2d1179a2ec4382de9d65ef9f416f18474cc4be913e25852371dcf33e37\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e54948b75da3ca72350bc35db305bb6bcee4e8a91e63d84823486128e70e4480\",\"dweb:/ipfs/QmSapdMpk2MmAysUPaHAT1q6MMUd4bhAT69eRJzfVZKH1d\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\nimport \"./BaseOperationalContract.sol\";\nimport \"../data/base/BaseDataContract.sol\";\nimport \"../data/base/BaseDataInsurerController.sol\";\nimport \"../data/base/BaseDataInsuranceController.sol\";\n\ninterface BaseSuretyData is BaseOperationalContract, BaseDataContract, BaseDataInsurerController, BaseDataInsuranceController {\n}\n\n\n",
+  "sourcePath": "/Volumes/Others/blockchain/udacity/flight-udacity-dapp/contracts/shared/BaseSuretyData.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/shared/BaseSuretyData.sol",
+    "exportedSymbols": {
+      "BaseDataContract": [
+        2249
+      ],
+      "BaseDataInsuranceController": [
+        2288
+      ],
+      "BaseDataInsurerController": [
+        2325
+      ],
+      "BaseOperationalContract": [
+        2339
+      ],
+      "BaseSuretyData": [
+        2354
+      ]
+    },
+    "id": 2355,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2341,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".5"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:19"
+      },
+      {
+        "absolutePath": "project:/contracts/shared/BaseOperationalContract.sol",
+        "file": "./BaseOperationalContract.sol",
+        "id": 2342,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2355,
+        "sourceUnit": 2340,
+        "src": "57:39:19",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/data/base/BaseDataContract.sol",
+        "file": "../data/base/BaseDataContract.sol",
+        "id": 2343,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2355,
+        "sourceUnit": 2250,
+        "src": "97:43:19",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/data/base/BaseDataInsurerController.sol",
+        "file": "../data/base/BaseDataInsurerController.sol",
+        "id": 2344,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2355,
+        "sourceUnit": 2326,
+        "src": "141:52:19",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/data/base/BaseDataInsuranceController.sol",
+        "file": "../data/base/BaseDataInsuranceController.sol",
+        "id": 2345,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2355,
+        "sourceUnit": 2289,
+        "src": "194:54:19",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 2346,
+              "name": "BaseOperationalContract",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 2339,
+              "src": "278:23:19"
+            },
+            "id": 2347,
+            "nodeType": "InheritanceSpecifier",
+            "src": "278:23:19"
+          },
+          {
+            "baseName": {
+              "id": 2348,
+              "name": "BaseDataContract",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 2249,
+              "src": "303:16:19"
+            },
+            "id": 2349,
+            "nodeType": "InheritanceSpecifier",
+            "src": "303:16:19"
+          },
+          {
+            "baseName": {
+              "id": 2350,
+              "name": "BaseDataInsurerController",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 2325,
+              "src": "321:25:19"
+            },
+            "id": 2351,
+            "nodeType": "InheritanceSpecifier",
+            "src": "321:25:19"
+          },
+          {
+            "baseName": {
+              "id": 2352,
+              "name": "BaseDataInsuranceController",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 2288,
+              "src": "348:27:19"
+            },
+            "id": 2353,
+            "nodeType": "InheritanceSpecifier",
+            "src": "348:27:19"
+          }
+        ],
+        "canonicalName": "BaseSuretyData",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 2354,
+        "linearizedBaseContracts": [
+          2354,
+          2288,
+          2325,
+          2249,
+          2339
+        ],
+        "name": "BaseSuretyData",
+        "nameLocation": "260:14:19",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 2355,
+        "src": "250:129:19",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:350:19"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-06-11T12:15:55.812Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
